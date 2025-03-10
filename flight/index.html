@@ -1,2427 +1,2499 @@
 <!DOCTYPE html>
-<html data-qb-installed="true">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <style data-emotion="css-global" data-s="">
-      @-webkit-keyframes mui-auto-fill {
-        from {
-          display: block;
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TravelXpert - Premium Travel Agency</title>
+    <style>
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
         }
-      }
-      @keyframes mui-auto-fill {
-        from {
-          display: block;
+        :root {
+            --primary-color: #FF7700; /* Orange */
+            --secondary-color: #222222; /* Black */
+            --text-color: #333;
+            --light-bg: #f5f5f5;
+            --white: #ffffff;
+            --dark-text: #222;
+            --border-color: #e0e0e0;
+            --light-gray: #f0f0f0;
+            --footer-bg: #222222;
+            --footer-text: #999;
+            .back-to-top {
+                bottom: 20px;
+                left: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
         }
-      }
-      @-webkit-keyframes mui-auto-fill-cancel {
-        from {
-          display: block;
+        
+        body {
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            line-height: 1.6;
         }
-      }
-      @keyframes mui-auto-fill-cancel {
-        from {
-          display: block;
+        
+        a {
+            text-decoration: none;
+            color: inherit;
         }
-      }
-    </style>
-    <style data-emotion="css-global" data-s="">
-      @-webkit-keyframes mui-auto-fill {
-        from {
-          display: block;
+        
+        ul {
+            list-style: none;
         }
-      }
-      @keyframes mui-auto-fill {
-        from {
-          display: block;
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
         }
-      }
-      @-webkit-keyframes mui-auto-fill-cancel {
-        from {
-          display: block;
+        
+        section {
+            padding: 80px 0;
         }
-      }
-      @keyframes mui-auto-fill-cancel {
-        from {
-          display: block;
+        
+        section:nth-child(even) {
+            background-color: var(--light-bg);
         }
-      }
-    </style>
-    <meta name="viewport" content="width=device-width" />
-    <title>Expedia</title>
-    <meta name="next-head-count" content="3" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link
-      rel="preload"
-      href="../assets/1d9f62bce0d481b0.css"
-      as="style"
-    />
-    <link
-      rel="stylesheet"
-      href="../assets/1d9f62bce0d481b0.css"
-      data-n-g=""
-    />
-    
-    <style data-emotion="css" data-s=""></style>
-    <style type="text/css">
-      .lf-progress {
-        -webkit-appearance: none;
-        -moz-apperance: none;
-        width: 100%;
-        /* margin: 0 10px; */
-        height: 4px;
-        border-radius: 3px;
-        cursor: pointer;
-      }
-      .lf-progress:focus {
-        outline: none;
-        border: none;
-      }
-      .lf-progress::-moz-range-track {
-        cursor: pointer;
-        background: none;
-        border: none;
-        outline: none;
-      }
-      .lf-progress::-webkit-slider-thumb {
-        -webkit-appearance: none !important;
-        height: 13px;
-        width: 13px;
-        border: 0;
-        border-radius: 50%;
-        background: #0fccce;
-        cursor: pointer;
-      }
-      .lf-progress::-moz-range-thumb {
-        -moz-appearance: none !important;
-        height: 13px;
-        width: 13px;
-        border: 0;
-        border-radius: 50%;
-        background: #0fccce;
-        cursor: pointer;
-      }
-      .lf-progress::-ms-track {
-        width: 100%;
-        height: 3px;
-        cursor: pointer;
-        background: transparent;
-        border-color: transparent;
-        color: transparent;
-      }
-      .lf-progress::-ms-fill-lower {
-        background: #ccc;
-        border-radius: 3px;
-      }
-      .lf-progress::-ms-fill-upper {
-        background: #ccc;
-        border-radius: 3px;
-      }
-      .lf-progress::-ms-thumb {
-        border: 0;
-        height: 15px;
-        width: 15px;
-        border-radius: 50%;
-        background: #0fccce;
-        cursor: pointer;
-      }
-      .lf-progress:focus::-ms-fill-lower {
-        background: #ccc;
-      }
-      .lf-progress:focus::-ms-fill-upper {
-        background: #ccc;
-      }
-      .lf-player-container :focus {
-        outline: 0;
-      }
-      .lf-popover {
-        position: relative;
-      }
-
-      .lf-popover-content {
-        display: inline-block;
-        position: absolute;
-        opacity: 1;
-        visibility: visible;
-        transform: translate(0, -10px);
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-        transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
-      }
-
-      .lf-popover-content.hidden {
-        opacity: 0;
-        visibility: hidden;
-        transform: translate(0, 0px);
-      }
-
-      .lf-player-btn-container {
-        display: flex;
-        align-items: center;
-      }
-      .lf-player-btn {
-        cursor: pointer;
-        fill: #999;
-        width: 14px;
-      }
-
-      .lf-player-btn.active {
-        fill: #555;
-      }
-
-      .lf-popover {
-        position: relative;
-      }
-
-      .lf-popover-content {
-        display: inline-block;
-        position: absolute;
-        background-color: #ffffff;
-        opacity: 1;
-
-        transform: translate(0, -10px);
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-        transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
-        padding: 10px;
-      }
-
-      .lf-popover-content.hidden {
-        opacity: 0;
-        visibility: hidden;
-        transform: translate(0, 0px);
-      }
-
-      .lf-arrow {
-        position: absolute;
-        z-index: -1;
-        content: "";
-        bottom: -9px;
-        border-style: solid;
-        border-width: 10px 10px 0px 10px;
-      }
-
-      .lf-left-align,
-      .lf-left-align .lfarrow {
-        left: 0;
-        right: unset;
-      }
-
-      .lf-right-align,
-      .lf-right-align .lf-arrow {
-        right: 0;
-        left: unset;
-      }
-
-      .lf-text-input {
-        border: 1px #ccc solid;
-        border-radius: 5px;
-        padding: 3px;
-        width: 60px;
-        margin: 0;
-      }
-
-      .lf-color-picker {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        height: 90px;
-      }
-
-      .lf-color-selectors {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-
-      .lf-color-component {
-        display: flex;
-        flex-direction: row;
-        font-size: 12px;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .lf-color-component strong {
-        width: 40px;
-      }
-
-      .lf-color-component input[type="range"] {
-        margin: 0 0 0 10px;
-      }
-
-      .lf-color-component input[type="number"] {
-        width: 50px;
-        margin: 0 0 0 10px;
-      }
-
-      .lf-color-preview {
-        font-size: 12px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        padding-left: 5px;
-      }
-
-      .lf-preview {
-        height: 60px;
-        width: 60px;
-      }
-
-      .lf-popover-snapshot {
-        width: 150px;
-      }
-      .lf-popover-snapshot h5 {
-        margin: 5px 0 10px 0;
-        font-size: 0.75rem;
-      }
-      .lf-popover-snapshot a {
-        display: block;
-        text-decoration: none;
-      }
-      .lf-popover-snapshot a:before {
-        content: "⥼";
-        margin-right: 5px;
-      }
-      .lf-popover-snapshot .lf-note {
-        display: block;
-        margin-top: 10px;
-        color: #999;
-      }
-      .lf-player-controls > div {
-        margin-right: 5px;
-        margin-left: 5px;
-      }
-      .lf-player-controls > div:first-child {
-        margin-left: 0px;
-      }
-      .lf-player-controls > div:last-child {
-        margin-right: 0px;
-      }
-    </style>
-    
-    <style type="text/css">
-      @font-face {
-        font-weight: 400;
-        font-style: normal;
-        font-family: circular;
-
-        src: url("chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Book.woff2")
-          format("woff2");
-      }
-
-      @font-face {
-        font-weight: 700;
-        font-style: normal;
-        font-family: circular;
-
-        src: url("chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2")
-          format("woff2");
-      }
-    </style>
-    <style data-emotion="css sfyx9i" data-s="">
-      .css-sfyx9i {
-        text-align: center;
-        -webkit-flex: 0 0 auto;
-        -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
-        font-size: 1.5rem;
-        padding: 8px;
-        border-radius: 50%;
-        overflow: visible;
-        color: rgba(0, 0, 0, 0.54);
-        -webkit-transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1)
-          0ms;
-        transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        margin-left: -12px;
-        color: inherit;
-      }
-      .css-sfyx9i:hover {
-        background-color: rgba(0, 0, 0, 0.04);
-      }
-      @media (hover: none) {
-        .css-sfyx9i:hover {
-          background-color: transparent;
+        
+        section:nth-child(odd) {
+            background-color: var(--white);
         }
-      }
-      .css-sfyx9i.Mui-disabled {
-        background-color: transparent;
-        color: rgba(0, 0, 0, 0.26);
-      }
-    </style>
-    <style data-emotion="css 1a1y772" data-s="">
-      .css-1a1y772 {
-        display: -webkit-inline-box;
-        display: -webkit-inline-flex;
-        display: -ms-inline-flexbox;
-        display: inline-flex;
-        -webkit-align-items: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        position: relative;
-        box-sizing: border-box;
-        -webkit-tap-highlight-color: transparent;
-        background-color: transparent;
-        outline: 0;
-        border: 0;
-        margin: 0;
-        border-radius: 0;
-        padding: 0;
-        cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        vertical-align: middle;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        -webkit-text-decoration: none;
-        text-decoration: none;
-        color: inherit;
-        text-align: center;
-        -webkit-flex: 0 0 auto;
-        -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
-        font-size: 1.5rem;
-        padding: 8px;
-        border-radius: 50%;
-        overflow: visible;
-        color: rgba(0, 0, 0, 0.54);
-        -webkit-transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1)
-          0ms;
-        transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        margin-left: -12px;
-        color: inherit;
-      }
-      .css-1a1y772::-moz-focus-inner {
-        border-style: none;
-      }
-      .css-1a1y772.Mui-disabled {
-        pointer-events: none;
-        cursor: default;
-      }
-      @media print {
-        .css-1a1y772 {
-          -webkit-print-color-adjust: exact;
-          color-adjust: exact;
+        
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 8px 0;
+            font-size: 13px;
+            position: relative;
+            z-index: 100;
         }
-      }
-      .css-1a1y772:hover {
-        background-color: rgba(0, 0, 0, 0.04);
-      }
-      @media (hover: none) {
-        .css-1a1y772:hover {
-          background-color: transparent;
+        
+        .top-bar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-      }
-      .css-1a1y772.Mui-disabled {
-        background-color: transparent;
-        color: rgba(0, 0, 0, 0.26);
-      }
-    </style>
-    <style data-emotion="css vubbuv" data-s="">
-      .css-vubbuv {
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        width: 1em;
-        height: 1em;
-        display: inline-block;
-        fill: currentColor;
-        -webkit-flex-shrink: 0;
-        -ms-flex-negative: 0;
-        flex-shrink: 0;
-        -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        font-size: 1.5rem;
-      }
-    </style>
-    <style data-emotion="css aeu6tq" data-s="">
-      .css-aeu6tq {
-        z-index: 1200;
-        z-index: 99999;
-      }
-    </style>
-    <style data-emotion="css 1cl3ihv" data-s="">
-      .css-1cl3ihv {
-        -webkit-text-decoration: underline;
-        text-decoration: underline;
-        text-decoration-color: rgba(25, 118, 210, 0.4);
-      }
-      .css-1cl3ihv:hover {
-        text-decoration-color: inherit;
-      }
-    </style>
-    <style data-emotion="css z4r21k" data-s="">
-      .css-z4r21k {
-        margin: 0;
-        font: inherit;
-        color: #1976d2;
-        -webkit-text-decoration: underline;
-        text-decoration: underline;
-        text-decoration-color: rgba(25, 118, 210, 0.4);
-      }
-      .css-z4r21k:hover {
-        text-decoration-color: inherit;
-      }
-    </style>
-    <style data-emotion="css cw1a0k" data-s="">
-      .css-cw1a0k .clearButton {
-        opacity: 1;
-      }
-      @media (pointer: fine) {
-        .css-cw1a0k .clearButton {
-          opacity: 0;
+        
+        .top-contact-info {
+            display: flex;
+            gap: 20px;
         }
-        .css-cw1a0k:hover .clearButton,
-        .css-cw1a0k:focus-within .clearButton {
-          opacity: 1;
+        
+        .top-contact-info a {
+            color: var(--white);
         }
-      }
-    </style>
-    <style data-emotion="css 165mck1" data-s="">
-      .css-165mck1 {
-        display: -webkit-inline-box;
-        display: -webkit-inline-flex;
-        display: -ms-inline-flexbox;
-        display: inline-flex;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        position: relative;
-        min-width: 0;
-        padding: 0;
-        margin: 0;
-        border: 0;
-        vertical-align: top;
-      }
-      .css-165mck1 .clearButton {
-        opacity: 1;
-      }
-      @media (pointer: fine) {
-        .css-165mck1 .clearButton {
-          opacity: 0;
+        
+        .top-nav {
+            display: flex;
+            gap: 15px;
         }
-        .css-165mck1:hover .clearButton,
-        .css-165mck1:focus-within .clearButton {
-          opacity: 1;
+        
+        .top-nav a:hover {
+            color: var(--primary-color);
         }
-      }
-    </style>
-    <style data-emotion="css 1bn53lx" data-s="">
-      .css-1bn53lx {
-        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-        font-weight: 400;
-        font-size: 1rem;
-        line-height: 1.4375em;
-        letter-spacing: 0.00938em;
-        color: rgba(0, 0, 0, 0.87);
-        box-sizing: border-box;
-        position: relative;
-        cursor: text;
-        display: -webkit-inline-box;
-        display: -webkit-inline-flex;
-        display: -ms-inline-flexbox;
-        display: inline-flex;
-        -webkit-align-items: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        position: relative;
-        border-radius: 4px;
-        padding-right: 14px;
-      }
-      .css-1bn53lx.Mui-disabled {
-        color: rgba(0, 0, 0, 0.38);
-        cursor: default;
-      }
-      .css-1bn53lx:hover .MuiOutlinedInput-notchedOutline {
-        border-color: rgba(0, 0, 0, 0.87);
-      }
-      @media (hover: none) {
-        .css-1bn53lx:hover .MuiOutlinedInput-notchedOutline {
-          border-color: rgba(0, 0, 0, 0.23);
+        
+        /* Header */
+        .header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 99;
         }
-      }
-      .css-1bn53lx.Mui-focused .MuiOutlinedInput-notchedOutline {
-        border-color: #1976d2;
-        border-width: 2px;
-      }
-      .css-1bn53lx.Mui-error .MuiOutlinedInput-notchedOutline {
-        border-color: #d32f2f;
-      }
-      .css-1bn53lx.Mui-disabled .MuiOutlinedInput-notchedOutline {
-        border-color: rgba(0, 0, 0, 0.26);
-      }
-    </style>
-    <style data-emotion="css 1uvydh2" data-s="">
-      .css-1uvydh2 {
-        font: inherit;
-        letter-spacing: inherit;
-        color: currentColor;
-        padding: 4px 0 5px;
-        border: 0;
-        box-sizing: content-box;
-        background: none;
-        height: 1.4375em;
-        margin: 0;
-        -webkit-tap-highlight-color: transparent;
-        display: block;
-        min-width: 0;
-        width: 100%;
-        -webkit-animation-name: mui-auto-fill-cancel;
-        animation-name: mui-auto-fill-cancel;
-        -webkit-animation-duration: 10ms;
-        animation-duration: 10ms;
-        padding: 16.5px 14px;
-        padding-right: 0;
-      }
-      .css-1uvydh2::-webkit-input-placeholder {
-        color: currentColor;
-        opacity: 0.42;
-        -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-      }
-      .css-1uvydh2::-moz-placeholder {
-        color: currentColor;
-        opacity: 0.42;
-        -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-      }
-      .css-1uvydh2:-ms-input-placeholder {
-        color: currentColor;
-        opacity: 0.42;
-        -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-      }
-      .css-1uvydh2::-ms-input-placeholder {
-        color: currentColor;
-        opacity: 0.42;
-        -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-      }
-      .css-1uvydh2:focus {
-        outline: 0;
-      }
-      .css-1uvydh2:invalid {
-        box-shadow: none;
-      }
-      .css-1uvydh2::-webkit-search-decoration {
-        -webkit-appearance: none;
-      }
-      label[data-shrink="false"]
-        + .MuiInputBase-formControl
-        .css-1uvydh2::-webkit-input-placeholder {
-        opacity: 0 !important;
-      }
-      label[data-shrink="false"]
-        + .MuiInputBase-formControl
-        .css-1uvydh2::-moz-placeholder {
-        opacity: 0 !important;
-      }
-      label[data-shrink="false"]
-        + .MuiInputBase-formControl
-        .css-1uvydh2:-ms-input-placeholder {
-        opacity: 0 !important;
-      }
-      label[data-shrink="false"]
-        + .MuiInputBase-formControl
-        .css-1uvydh2::-ms-input-placeholder {
-        opacity: 0 !important;
-      }
-      label[data-shrink="false"]
-        + .MuiInputBase-formControl
-        .css-1uvydh2:focus::-webkit-input-placeholder {
-        opacity: 0.42;
-      }
-      label[data-shrink="false"]
-        + .MuiInputBase-formControl
-        .css-1uvydh2:focus::-moz-placeholder {
-        opacity: 0.42;
-      }
-      label[data-shrink="false"]
-        + .MuiInputBase-formControl
-        .css-1uvydh2:focus:-ms-input-placeholder {
-        opacity: 0.42;
-      }
-      label[data-shrink="false"]
-        + .MuiInputBase-formControl
-        .css-1uvydh2:focus::-ms-input-placeholder {
-        opacity: 0.42;
-      }
-      .css-1uvydh2.Mui-disabled {
-        opacity: 1;
-        -webkit-text-fill-color: rgba(0, 0, 0, 0.38);
-      }
-      .css-1uvydh2:-webkit-autofill {
-        -webkit-animation-duration: 5000s;
-        animation-duration: 5000s;
-        -webkit-animation-name: mui-auto-fill;
-        animation-name: mui-auto-fill;
-      }
-      .css-1uvydh2:-webkit-autofill {
-        border-radius: inherit;
-      }
-    </style>
-    <style data-emotion="css 1nvf7g0" data-s="">
-      .css-1nvf7g0 {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        height: 0.01em;
-        max-height: 2em;
-        -webkit-align-items: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        white-space: nowrap;
-        color: rgba(0, 0, 0, 0.54);
-        margin-left: 8px;
-      }
-    </style>
-    <style data-emotion="css 1i2cjo2" data-s="">
-      .css-1i2cjo2 {
-        text-align: center;
-        -webkit-flex: 0 0 auto;
-        -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
-        font-size: 1.5rem;
-        padding: 8px;
-        border-radius: 50%;
-        overflow: visible;
-        color: rgba(0, 0, 0, 0.54);
-        -webkit-transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1)
-          0ms;
-        transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        margin-right: -12px;
-      }
-      .css-1i2cjo2:hover {
-        background-color: rgba(0, 0, 0, 0.04);
-      }
-      @media (hover: none) {
-        .css-1i2cjo2:hover {
-          background-color: transparent;
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-      }
-      .css-1i2cjo2.Mui-disabled {
-        background-color: transparent;
-        color: rgba(0, 0, 0, 0.26);
-      }
-    </style>
-    <style data-emotion="css slyssw" data-s="">
-      .css-slyssw {
-        display: -webkit-inline-box;
-        display: -webkit-inline-flex;
-        display: -ms-inline-flexbox;
-        display: inline-flex;
-        -webkit-align-items: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        position: relative;
-        box-sizing: border-box;
-        -webkit-tap-highlight-color: transparent;
-        background-color: transparent;
-        outline: 0;
-        border: 0;
-        margin: 0;
-        border-radius: 0;
-        padding: 0;
-        cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        vertical-align: middle;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        -webkit-text-decoration: none;
-        text-decoration: none;
-        color: inherit;
-        text-align: center;
-        -webkit-flex: 0 0 auto;
-        -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
-        font-size: 1.5rem;
-        padding: 8px;
-        border-radius: 50%;
-        overflow: visible;
-        color: rgba(0, 0, 0, 0.54);
-        -webkit-transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1)
-          0ms;
-        transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        margin-right: -12px;
-      }
-      .css-slyssw::-moz-focus-inner {
-        border-style: none;
-      }
-      .css-slyssw.Mui-disabled {
-        pointer-events: none;
-        cursor: default;
-      }
-      @media print {
-        .css-slyssw {
-          -webkit-print-color-adjust: exact;
-          color-adjust: exact;
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
         }
-      }
-      .css-slyssw:hover {
-        background-color: rgba(0, 0, 0, 0.04);
-      }
-      @media (hover: none) {
-        .css-slyssw:hover {
-          background-color: transparent;
+        
+        .logo span {
+            color: var(--secondary-color);
         }
-      }
-      .css-slyssw.Mui-disabled {
-        background-color: transparent;
-        color: rgba(0, 0, 0, 0.26);
-      }
-    </style>
-    <style data-emotion="css vubbuv" data-s="">
-      .css-vubbuv {
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        width: 1em;
-        height: 1em;
-        display: inline-block;
-        fill: currentColor;
-        -webkit-flex-shrink: 0;
-        -ms-flex-negative: 0;
-        flex-shrink: 0;
-        -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        font-size: 1.5rem;
-      }
-    </style>
-    <style data-emotion="css 19w1uun" data-s="">
-      .css-19w1uun {
-        border-color: rgba(0, 0, 0, 0.23);
-      }
-    </style>
-    <style data-emotion="css igs3ac" data-s="">
-      .css-igs3ac {
-        text-align: left;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        top: -5px;
-        left: 0;
-        margin: 0;
-        padding: 0 8px;
-        pointer-events: none;
-        border-radius: inherit;
-        border-style: solid;
-        border-width: 1px;
-        overflow: hidden;
-        min-width: 0%;
-        border-color: rgba(0, 0, 0, 0.23);
-      }
-    </style>
-    <style data-emotion="css ihdtdm" data-s="">
-      .css-ihdtdm {
-        float: unset;
-        width: auto;
-        overflow: hidden;
-        padding: 0;
-        line-height: 11px;
-        -webkit-transition: width 150ms cubic-bezier(0, 0, 0.2, 1) 0ms;
-        transition: width 150ms cubic-bezier(0, 0, 0.2, 1) 0ms;
-      }
-    </style>
-    <style data-emotion="css 1ozefeb" data-s="">
-      .css-1ozefeb {
-        z-index: 1300;
-      }
-    </style>
-    <style data-emotion="css 1mtsuo7" data-s="">
-      .css-1mtsuo7 {
-        z-index: 1300;
-      }
-    </style>
-    <style data-emotion="css cw1a0k" data-s="">
-      .css-cw1a0k .clearButton {
-        opacity: 1;
-      }
-      @media (pointer: fine) {
-        .css-cw1a0k .clearButton {
-          opacity: 0;
+        
+        .header-phone {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        .css-cw1a0k:hover .clearButton,
-        .css-cw1a0k:focus-within .clearButton {
-          opacity: 1;
+        
+        .phone-icon {
+            background-color: var(--primary-color);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
         }
-      }
-    </style>
-    <style data-emotion="css 165mck1" data-s="">
-      .css-165mck1 {
-        display: -webkit-inline-box;
-        display: -webkit-inline-flex;
-        display: -ms-inline-flexbox;
-        display: inline-flex;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        position: relative;
-        min-width: 0;
-        padding: 0;
-        margin: 0;
-        border: 0;
-        vertical-align: top;
-      }
-      .css-165mck1 .clearButton {
-        opacity: 1;
-      }
-      @media (pointer: fine) {
-        .css-165mck1 .clearButton {
-          opacity: 0;
+        
+        .phone-content {
+            display: flex;
+            flex-direction: column;
         }
-        .css-165mck1:hover .clearButton,
-        .css-165mck1:focus-within .clearButton {
-          opacity: 1;
+        
+        .phone-label {
+            font-size: 12px;
+            color: #777;
         }
-      }
-    </style>
-    <style data-emotion="css 1bn53lx" data-s="">
-      .css-1bn53lx {
-        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-        font-weight: 400;
-        font-size: 1rem;
-        line-height: 1.4375em;
-        letter-spacing: 0.00938em;
-        color: rgba(0, 0, 0, 0.87);
-        box-sizing: border-box;
-        position: relative;
-        cursor: text;
-        display: -webkit-inline-box;
-        display: -webkit-inline-flex;
-        display: -ms-inline-flexbox;
-        display: inline-flex;
-        -webkit-align-items: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        position: relative;
-        border-radius: 4px;
-        padding-right: 14px;
-      }
-      .css-1bn53lx.Mui-disabled {
-        color: rgba(0, 0, 0, 0.38);
-        cursor: default;
-      }
-      .css-1bn53lx:hover .MuiOutlinedInput-notchedOutline {
-        border-color: rgba(0, 0, 0, 0.87);
-      }
-      @media (hover: none) {
-        .css-1bn53lx:hover .MuiOutlinedInput-notchedOutline {
-          border-color: rgba(0, 0, 0, 0.23);
+        
+        .phone-number {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--secondary-color);
         }
-      }
-      .css-1bn53lx.Mui-focused .MuiOutlinedInput-notchedOutline {
-        border-color: #1976d2;
-        border-width: 2px;
-      }
-      .css-1bn53lx.Mui-error .MuiOutlinedInput-notchedOutline {
-        border-color: #d32f2f;
-      }
-      .css-1bn53lx.Mui-disabled .MuiOutlinedInput-notchedOutline {
-        border-color: rgba(0, 0, 0, 0.26);
-      }
-    </style>
-    <style data-emotion="css 1uvydh2" data-s="">
-      .css-1uvydh2 {
-        font: inherit;
-        letter-spacing: inherit;
-        color: currentColor;
-        padding: 4px 0 5px;
-        border: 0;
-        box-sizing: content-box;
-        background: none;
-        height: 1.4375em;
-        margin: 0;
-        -webkit-tap-highlight-color: transparent;
-        display: block;
-        min-width: 0;
-        width: 100%;
-        -webkit-animation-name: mui-auto-fill-cancel;
-        animation-name: mui-auto-fill-cancel;
-        -webkit-animation-duration: 10ms;
-        animation-duration: 10ms;
-        padding: 16.5px 14px;
-        padding-right: 0;
-      }
-      .css-1uvydh2::-webkit-input-placeholder {
-        color: currentColor;
-        opacity: 0.42;
-        -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-      }
-      .css-1uvydh2::-moz-placeholder {
-        color: currentColor;
-        opacity: 0.42;
-        -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-      }
-      .css-1uvydh2:-ms-input-placeholder {
-        color: currentColor;
-        opacity: 0.42;
-        -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-      }
-      .css-1uvydh2::-ms-input-placeholder {
-        color: currentColor;
-        opacity: 0.42;
-        -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-      }
-      .css-1uvydh2:focus {
-        outline: 0;
-      }
-      .css-1uvydh2:invalid {
-        box-shadow: none;
-      }
-      .css-1uvydh2::-webkit-search-decoration {
-        -webkit-appearance: none;
-      }
-      label[data-shrink="false"]
-        + .MuiInputBase-formControl
-        .css-1uvydh2::-webkit-input-placeholder {
-        opacity: 0 !important;
-      }
-      label[data-shrink="false"]
-        + .MuiInputBase-formControl
-        .css-1uvydh2::-moz-placeholder {
-        opacity: 0 !important;
-      }
-      label[data-shrink="false"]
-        + .MuiInputBase-formControl
-        .css-1uvydh2:-ms-input-placeholder {
-        opacity: 0 !important;
-      }
-      label[data-shrink="false"]
-        + .MuiInputBase-formControl
-        .css-1uvydh2::-ms-input-placeholder {
-        opacity: 0 !important;
-      }
-      label[data-shrink="false"]
-        + .MuiInputBase-formControl
-        .css-1uvydh2:focus::-webkit-input-placeholder {
-        opacity: 0.42;
-      }
-      label[data-shrink="false"]
-        + .MuiInputBase-formControl
-        .css-1uvydh2:focus::-moz-placeholder {
-        opacity: 0.42;
-      }
-      label[data-shrink="false"]
-        + .MuiInputBase-formControl
-        .css-1uvydh2:focus:-ms-input-placeholder {
-        opacity: 0.42;
-      }
-      label[data-shrink="false"]
-        + .MuiInputBase-formControl
-        .css-1uvydh2:focus::-ms-input-placeholder {
-        opacity: 0.42;
-      }
-      .css-1uvydh2.Mui-disabled {
-        opacity: 1;
-        -webkit-text-fill-color: rgba(0, 0, 0, 0.38);
-      }
-      .css-1uvydh2:-webkit-autofill {
-        -webkit-animation-duration: 5000s;
-        animation-duration: 5000s;
-        -webkit-animation-name: mui-auto-fill;
-        animation-name: mui-auto-fill;
-      }
-      .css-1uvydh2:-webkit-autofill {
-        border-radius: inherit;
-      }
-    </style>
-    <style data-emotion="css 1nvf7g0" data-s="">
-      .css-1nvf7g0 {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        height: 0.01em;
-        max-height: 2em;
-        -webkit-align-items: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        white-space: nowrap;
-        color: rgba(0, 0, 0, 0.54);
-        margin-left: 8px;
-      }
-    </style>
-    <style data-emotion="css 1i2cjo2" data-s="">
-      .css-1i2cjo2 {
-        text-align: center;
-        -webkit-flex: 0 0 auto;
-        -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
-        font-size: 1.5rem;
-        padding: 8px;
-        border-radius: 50%;
-        overflow: visible;
-        color: rgba(0, 0, 0, 0.54);
-        -webkit-transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1)
-          0ms;
-        transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        margin-right: -12px;
-      }
-      .css-1i2cjo2:hover {
-        background-color: rgba(0, 0, 0, 0.04);
-      }
-      @media (hover: none) {
-        .css-1i2cjo2:hover {
-          background-color: transparent;
+        
+        /* Main Navigation */
+        .main-nav {
+            background-color: var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 98;
         }
-      }
-      .css-1i2cjo2.Mui-disabled {
-        background-color: transparent;
-        color: rgba(0, 0, 0, 0.26);
-      }
-    </style>
-    <style data-emotion="css slyssw" data-s="">
-      .css-slyssw {
-        display: -webkit-inline-box;
-        display: -webkit-inline-flex;
-        display: -ms-inline-flexbox;
-        display: inline-flex;
-        -webkit-align-items: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        position: relative;
-        box-sizing: border-box;
-        -webkit-tap-highlight-color: transparent;
-        background-color: transparent;
-        outline: 0;
-        border: 0;
-        margin: 0;
-        border-radius: 0;
-        padding: 0;
-        cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        vertical-align: middle;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        -webkit-text-decoration: none;
-        text-decoration: none;
-        color: inherit;
-        text-align: center;
-        -webkit-flex: 0 0 auto;
-        -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
-        font-size: 1.5rem;
-        padding: 8px;
-        border-radius: 50%;
-        overflow: visible;
-        color: rgba(0, 0, 0, 0.54);
-        -webkit-transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1)
-          0ms;
-        transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        margin-right: -12px;
-      }
-      .css-slyssw::-moz-focus-inner {
-        border-style: none;
-      }
-      .css-slyssw.Mui-disabled {
-        pointer-events: none;
-        cursor: default;
-      }
-      @media print {
-        .css-slyssw {
-          -webkit-print-color-adjust: exact;
-          color-adjust: exact;
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
         }
-      }
-      .css-slyssw:hover {
-        background-color: rgba(0, 0, 0, 0.04);
-      }
-      @media (hover: none) {
-        .css-slyssw:hover {
-          background-color: transparent;
+        
+        .nav-menu {
+            display: flex;
         }
-      }
-      .css-slyssw.Mui-disabled {
-        background-color: transparent;
-        color: rgba(0, 0, 0, 0.26);
-      }
+        
+        .nav-menu li a {
+            display: block;
+            color: var(--white);
+            padding: 15px 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-menu li a:hover, .nav-menu li a.active {
+            background-color: rgba(0,0,0,0.1);
+        }
+        
+        .nav-search {
+            display: flex;
+            align-items: center;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 0 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+        }
+        
+        .hero-title {
+            font-size: 40px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .hero-btn:hover {
+            background-color: #e66c00;
+        }
+        
+        /* Search Box */
+        .search-box {
+            background-color: var(--white);
+            padding: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 60px;
+        }
+        
+        .search-form {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+        
+        .search-group {
+            position: relative;
+        }
+        
+        .search-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--secondary-color);
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 15px;
+        }
+        
+        .search-button {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+        }
+        
+        .search-button:hover {
+            background-color: #e66c00;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .section-subtitle {
+            font-size: 16px;
+            color: #777;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Section Divider */
+        .section-divider {
+            height: 100px;
+            background: var(--primary-color);
+            position: relative;
+            padding: 0;
+        }
+        
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: var(--white);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
+        }
+        
+        .section-divider::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: var(--light-bg);
+            clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+        }
+        
+        /* Hot Deals Section */
+        .deals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .deal-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .deal-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .deal-image {
+            position: relative;
+            height: 200px;
+        }
+        
+        .deal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .deal-tag {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 5px 15px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        
+        .deal-content {
+            padding: 20px;
+        }
+        
+        .deal-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .deal-stars {
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+        
+        .deal-description {
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .deal-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #777;
+            font-size: 14px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .deal-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 15px 0;
+        }
+        
+        .deal-price span {
+            font-size: 14px;
+            color: #777;
+            font-weight: 400;
+        }
+        
+        .btn-view-all {
+            display: block;
+            width: 200px;
+            margin: 0 auto;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            font-weight: 600;
+            border-radius: 4px;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-view-all:hover {
+            background-color: #e66c00;
+        }
+        
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-item {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+        }
+        
+        .feature-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        /* Popular Destinations */
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .destination-card {
+            position: relative;
+            height: 250px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .destination-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .destination-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .destination-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: var(--white);
+        }
+        
+        .destination-name {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .destination-count {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* About Section */
+        .about-content {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        
+        .about-hero {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .about-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .about-hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: var(--white);
+        }
+        
+        .about-hero-overlay h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .about-section {
+            padding: 40px;
+        }
+        
+        .about-section h2 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 28px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .about-section h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .about-section p {
+            margin-bottom: 15px;
+        }
+        
+        .about-section ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .about-section ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .about-section ul li:before {
+            content: '✓';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .about-card {
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .about-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .about-card-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin: 0 auto 20px;
+        }
+        
+        .about-card h3 {
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            font-size: 20px;
+        }
+        
+        .stats-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .stat-item {
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .team-member {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-photo {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .team-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .team-name {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+        
+        .team-position {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .team-bio {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 40px;
+        }
+        
+        .contact-form {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 40px;
+        }
+        
+        .contact-info h2, .contact-form h2 {
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+            font-size: 24px;
+            position: relative;
+            padding-bottom: la 10px;
+        }
+        
+        .contact-info h2:after, .contact-form h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .contact-info p {
+            margin-bottom: 30px;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .contact-text h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+        
+        .office-hours {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        .office-hours h3 {
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .office-hours p {
+            margin-bottom: 10px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-gray);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-check {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .form-check-input {
+            margin-right: 10px;
+            margin-top: 4px;
+        }
+        
+        .form-check-label {
+            font-size: 14px;
+            color: #777;
+        }
+        
+        .btn-submit {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-submit:hover {
+            background-color: #e66c00;
+        }
+        
+        .map-section {
+            margin-top: 60px;
+        }
+        
+        .map-container {
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Legal Sections */
+        .legal-content {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 40px;
+        }
+        
+        .legal-section {
+            margin-bottom: 40px;
+        }
+        
+        .legal-section h2 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        
+        .legal-section h3 {
+            color: var(--secondary-color);
+            margin: 20px 0 10px;
+            font-size: 20px;
+        }
+        
+        .legal-section p, .legal-section ul, .legal-section ol {
+            margin-bottom: 15px;
+        }
+        
+        .legal-section ul, .legal-section ol {
+            padding-left: 30px;
+        }
+        
+        .legal-section ul li, .legal-section ol li {
+            margin-bottom: 10px;
+            list-style-type: disc;
+        }
+        
+        .legal-section ol li {
+            list-style-type: decimal;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--light-gray);
+            padding: 80px 0;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-item {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-text {
+            position: relative;
+            padding: 20px 0;
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #666;
+        }
+        
+        .testimonial-text:before {
+            content: '"';
+            font-size: 50px;
+            color: var(--primary-color);
+            opacity: 0.3;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-name {
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+        
+        .author-role {
+            font-size: 14px;
+            color: #777;
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            padding: 60px 0;
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .newsletter h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 16px;
+        }
+        
+        .newsletter-button {
+            padding: 15px 25px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 0 4px 4px 0;
+            font-weight: 600;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 60px 0 0;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-widget h3 {
+            color: var(--white);
+            margin-bottom: 25px;
+            font-size: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-widget h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-contact li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer-contact-icon {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+        
+        /* Call Now Button */
+        .call-popup {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            padding: 15px 25px;
+            cursor: pointer;
+            z-index: 99;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .call-popup:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .call-icon {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary-color);
+            font-size: 20px;
+        }
+        
+        .call-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .call-label {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        
+        .call-number {
+            font-size: 18px;
+            font-weight: 700;
+        }
+        
+        /* Booking Help Popup */
+        .booking-popup {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        
+        .booking-popup-content {
+            position: relative;
+            background-color: white;
+            width: 90%;
+            max-width: 360px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            text-align: center;
+            box-sizing: border-box;
+        }
+        
+        .close-popup {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #888;
+            cursor: pointer;
+        }
+        
+        .consultant-image {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--primary-color);
+        }
+        
+        .consultant-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .booking-popup h2 {
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 22px;
+        }
+        
+        .popup-subtitle {
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .phone-button {
+            display: block;
+            width: 100%;
+            background-color: #222;
+            color: white;
+            padding: 12px 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            font-size: 14px;
+        }
+        
+        .phone-button:hover {
+            background-color: #444;
+        }
+        
+        .flag {
+            margin-right: 10px;
+        }
+        
+        .country-selector {
+            margin: 15px 0;
+        }
+        
+        .country-button {
+            display: inline-block;
+            padding: 8px 15px;
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .reasons-section {
+            background-color: #f9f0f0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            text-align: left;
+        }
+        
+        .reasons-section h3 {
+            color: #333;
+            margin-bottom: 12px;
+            position: relative;
+            padding-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .reasons-section h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .reason-item {
+            display: flex;
+            margin-bottom: 12px;
+            align-items: center;
+        }
+        
+        .reason-icon {
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        
+        .reason-text {
+            font-size: 13px;
+            line-height: 1.3;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 99;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-bar-container,
+            .header-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .header {
+                position: relative;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+            }
+            
+            .search-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input {
+                border-radius: 4px;
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-button {
+                border-radius: 4px;
+            }
+            
+            .booking-popup-content {
+                width: 95%;
+                max-width: 330px;
+                margin: 20px auto;
+                padding: 15px;
+            }
+            
+            .consultant-image {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 10px;
+            }
+            
+            .booking-popup h2 {
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+            
+            .popup-subtitle {
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
+            
+            .phone-button {
+                padding: 10px;
+                font-size: 13px;
+            }
+            
+            .reason-icon {
+                width: 25px;
+                height: 25px;
+                font-size: 14px;
+                margin-right: 8px;
+            }
+            
+            .reason-text {
+                font-size: 12px;
+            }
+            
+            .call-popup {
+                bottom: 20px;
+                right: 20px;
+                padding: 10px 15px;
+            }
+            
+            .call-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 16px;
+            }
+            
+            .call-number {
+                font-size: 14px;
+            }
+        }
     </style>
-    <style data-emotion="css vubbuv" data-s="">
-      .css-vubbuv {
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        width: 1em;
-        height: 1em;
-        display: inline-block;
-        fill: currentColor;
-        -webkit-flex-shrink: 0;
-        -ms-flex-negative: 0;
-        flex-shrink: 0;
-        -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        font-size: 1.5rem;
-      }
-    </style>
-    <style data-emotion="css 19w1uun" data-s="">
-      .css-19w1uun {
-        border-color: rgba(0, 0, 0, 0.23);
-      }
-    </style>
-    <style data-emotion="css igs3ac" data-s="">
-      .css-igs3ac {
-        text-align: left;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        top: -5px;
-        left: 0;
-        margin: 0;
-        padding: 0 8px;
-        pointer-events: none;
-        border-radius: inherit;
-        border-style: solid;
-        border-width: 1px;
-        overflow: hidden;
-        min-width: 0%;
-        border-color: rgba(0, 0, 0, 0.23);
-      }
-    </style>
-    <style data-emotion="css ihdtdm" data-s="">
-      .css-ihdtdm {
-        float: unset;
-        width: auto;
-        overflow: hidden;
-        padding: 0;
-        line-height: 11px;
-        -webkit-transition: width 150ms cubic-bezier(0, 0, 0.2, 1) 0ms;
-        transition: width 150ms cubic-bezier(0, 0, 0.2, 1) 0ms;
-      }
-    </style>
-    <style data-emotion="css 1ozefeb" data-s="">
-      .css-1ozefeb {
-        z-index: 1300;
-      }
-    </style>
-    <style data-emotion="css 1mtsuo7" data-s="">
-      .css-1mtsuo7 {
-        z-index: 1300;
-      }
-    </style>
-    <style type="text/css">
-      .lf-progress {
-        -webkit-appearance: none;
-        -moz-apperance: none;
-        width: 100%;
-        /* margin: 0 10px; */
-        height: 4px;
-        border-radius: 3px;
-        cursor: pointer;
-      }
-      .lf-progress:focus {
-        outline: none;
-        border: none;
-      }
-      .lf-progress::-moz-range-track {
-        cursor: pointer;
-        background: none;
-        border: none;
-        outline: none;
-      }
-      .lf-progress::-webkit-slider-thumb {
-        -webkit-appearance: none !important;
-        height: 13px;
-        width: 13px;
-        border: 0;
-        border-radius: 50%;
-        background: #0fccce;
-        cursor: pointer;
-      }
-      .lf-progress::-moz-range-thumb {
-        -moz-appearance: none !important;
-        height: 13px;
-        width: 13px;
-        border: 0;
-        border-radius: 50%;
-        background: #0fccce;
-        cursor: pointer;
-      }
-      .lf-progress::-ms-track {
-        width: 100%;
-        height: 3px;
-        cursor: pointer;
-        background: transparent;
-        border-color: transparent;
-        color: transparent;
-      }
-      .lf-progress::-ms-fill-lower {
-        background: #ccc;
-        border-radius: 3px;
-      }
-      .lf-progress::-ms-fill-upper {
-        background: #ccc;
-        border-radius: 3px;
-      }
-      .lf-progress::-ms-thumb {
-        border: 0;
-        height: 15px;
-        width: 15px;
-        border-radius: 50%;
-        background: #0fccce;
-        cursor: pointer;
-      }
-      .lf-progress:focus::-ms-fill-lower {
-        background: #ccc;
-      }
-      .lf-progress:focus::-ms-fill-upper {
-        background: #ccc;
-      }
-      .lf-player-container :focus {
-        outline: 0;
-      }
-      .lf-popover {
-        position: relative;
-      }
-
-      .lf-popover-content {
-        display: inline-block;
-        position: absolute;
-        opacity: 1;
-        visibility: visible;
-        transform: translate(0, -10px);
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-        transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
-      }
-
-      .lf-popover-content.hidden {
-        opacity: 0;
-        visibility: hidden;
-        transform: translate(0, 0px);
-      }
-
-      .lf-player-btn-container {
-        display: flex;
-        align-items: center;
-      }
-      .lf-player-btn {
-        cursor: pointer;
-        fill: #999;
-        width: 14px;
-      }
-
-      .lf-player-btn.active {
-        fill: #555;
-      }
-
-      .lf-popover {
-        position: relative;
-      }
-
-      .lf-popover-content {
-        display: inline-block;
-        position: absolute;
-        background-color: #ffffff;
-        opacity: 1;
-
-        transform: translate(0, -10px);
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-        transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
-        padding: 10px;
-      }
-
-      .lf-popover-content.hidden {
-        opacity: 0;
-        visibility: hidden;
-        transform: translate(0, 0px);
-      }
-
-      .lf-arrow {
-        position: absolute;
-        z-index: -1;
-        content: "";
-        bottom: -9px;
-        border-style: solid;
-        border-width: 10px 10px 0px 10px;
-      }
-
-      .lf-left-align,
-      .lf-left-align .lfarrow {
-        left: 0;
-        right: unset;
-      }
-
-      .lf-right-align,
-      .lf-right-align .lf-arrow {
-        right: 0;
-        left: unset;
-      }
-
-      .lf-text-input {
-        border: 1px #ccc solid;
-        border-radius: 5px;
-        padding: 3px;
-        width: 60px;
-        margin: 0;
-      }
-
-      .lf-color-picker {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        height: 90px;
-      }
-
-      .lf-color-selectors {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-
-      .lf-color-component {
-        display: flex;
-        flex-direction: row;
-        font-size: 12px;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .lf-color-component strong {
-        width: 40px;
-      }
-
-      .lf-color-component input[type="range"] {
-        margin: 0 0 0 10px;
-      }
-
-      .lf-color-component input[type="number"] {
-        width: 50px;
-        margin: 0 0 0 10px;
-      }
-
-      .lf-color-preview {
-        font-size: 12px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        padding-left: 5px;
-      }
-
-      .lf-preview {
-        height: 60px;
-        width: 60px;
-      }
-
-      .lf-popover-snapshot {
-        width: 150px;
-      }
-      .lf-popover-snapshot h5 {
-        margin: 5px 0 10px 0;
-        font-size: 0.75rem;
-      }
-      .lf-popover-snapshot a {
-        display: block;
-        text-decoration: none;
-      }
-      .lf-popover-snapshot a:before {
-        content: "⥼";
-        margin-right: 5px;
-      }
-      .lf-popover-snapshot .lf-note {
-        display: block;
-        margin-top: 10px;
-        color: #999;
-      }
-      .lf-player-controls > div {
-        margin-right: 5px;
-        margin-left: 5px;
-      }
-      .lf-player-controls > div:first-child {
-        margin-left: 0px;
-      }
-      .lf-player-controls > div:last-child {
-        margin-right: 0px;
-      }
-    </style>
-  
-  </head>
-  <body data-new-gr-c-s-check-loaded="14.1213.0" data-gr-ext-installed="">
-    <div id="__next">
-      <div style="display: none">
-        <div class="mob_section">
-          <div class="air_spacial_phone_view">
-            <a href="tel:+1(844) 565-0226"
-              ><div class="air_spacial_main">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="air_logo_area">
-                        <h4>
-                          <img
-                            alt=""
-                            loading="lazy"
-                            width="50"
-                            height="50"
-                            decoding="async"
-                            data-nimg="1"
-                            sizes="100vw"
-                            
-                            src="../assets/image"
-                            style="
-                              color: transparent;
-                              width: 100%;
-                              height: auto;
-                            "
-                          />
-                        </h4>
-                        <h5>Airline Reservations!!</h5>
-                        <h6>Un-Published Fares</h6>
-                      </div>
-                      <div class="air_spacial_middle">
-                        <h4>Saved For Our Callers</h4>
-                        <span class="air_spacial_middle3"><h5></h5></span>
-                        <h6></h6>
-                        <h6>Reservations</h6>
-                      </div>
-                      <div class="air_spacial_middle2">
-                        <p>
-                          New Reservations, Changes, Cancellations &amp;
-                          Customer Service
-                        </p>
-                        <h4>No Hold Time</h4>
-                        <h5><i class="fa-solid fa-phone"></i> Call Now</h5>
-                        <h6>Agent Available</h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="air_spacial_fix_bottom">
-                  <h4><i class="fa-solid fa-phone"></i> +1(844) 565-0226</h4>
-                </div>
-              </div></a
-            >
-          </div>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container top-bar-container">
+            <div class="top-contact-info">
+                <a href="mailto:support@travelxpert.com">support@travelxpert.com</a>
+                <span>Call Us: +1-123-456-7890</span>
+            </div>
+            <div class="top-nav">
+                <a href="#" onclick="showLoginModal()">Sign In</a>
+                <a href="#" onclick="showRegisterModal()">Register</a>
+                <a href="#contact">Contact Us</a>
+            </div>
         </div>
-      </div>
-      <header style="display: block">
-        <nav
-          class="navbar navbar-expand-lg navbar-light bg-white"
-          aria-label="Eleventh navbar example"
-        >
-          <div class="container">
-            <a class="navbar-brand" href="https://www.libroboleto.com/"
-              ><img
-                alt="Logo"
-                imagesizes="32"
-                loading="lazy"
-                width="200"
-                height="55"
-                decoding="async"
-                data-nimg="1"
-                class="img-fluid"
-               
-                src="../assets/logo.png"
-                style="color: transparent"
-            /></a>
-            <div
-              class="collapse navbar-collapse flex-grow-1 text-right"
-              id="navbarsExample09"
-            >
-              <ul class="navbar-nav ms-auto flex-nowrap">
-                <li class="nav-item">
-                  <a
-                    class="nav-link false"
-                    aria-current="page"
-                    href="https://www.libroboleto.com/"
-                    ><i class="fa-solid fa-house font_icon"></i> Home</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link false"
-                    href="https://www.libroboleto.com/about-us"
-                    ><i class="fa-solid fa-suitcase font_icon"></i> About Us</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link false"
-                    href="https://www.libroboleto.com/privacy-policy"
-                    ><i class="fa-solid fa-shield-halved font_icon"></i> Privacy
-                    Policy</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link false"
-                    href="https://www.libroboleto.com/contact-us"
-                    ><i class="fa-solid fa-address-book font_icon"></i> Contact
-                    Us</a
-                  >
-                </li>
-              </ul>
-              <div class="pull-right phone-number d-lg-block">
-                <ul>
-                  <li>
-                    <h5 class="m-0 p-0">
-                      <a href="tel:+1(844) 565-0226">+1(844) 565-0226</a>
-                    </h5>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </header>
-      <div class="pupupnone">
-        <div class="modal fade show" aria-modal="true" style="display: none">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <a href="tel:+1(844) 565-0226"
-                ><button type="button" class="close" data-dismiss="modal">
-                  X
-                </button></a
-              >
-              <div class="modal-body class-modal">
-                <div class="pop-up-new-sec">
-                  <section class="banner-view2">
-                    <a href="tel:+1(844) 565-0226"
-                      ><div class="container">
-                        <div class="col-md-4 bg_dark_box pop-up-content-box">
-                          <div class="text1">CALL FOR</div>
-                          <ul class="list-view-items">
-                            <li>
-                              Tickets<br />
-                              Booking
-                            </li>
-                            <li>Manage <br />Booking</li>
-                            <li>Cancellation</li>
-                            <li>Customer <br />Service</li>
-                          </ul>
-                          <img
-                            alt="calling-cus"
-                            loading="lazy"
-                            width="50"
-                            height="50"
-                            decoding="async"
-                            data-nimg="1"
-                            class="calling-cus-img"
-                            
-                            src="../assets/popup-img.png"
-                            style="color: transparent"
-                          />
-                          <div class="exbt_cl">
-                            <h5>
-                              <i class="fa-solid fa-phone-volume"></i
-                              ><span> Phone Only Offers </span>+1(844) 565-0226
-                            </h5>
-                            <h3>Call Answer in Seconds</h3>
-                          </div>
-                        </div>
-                      </div></a
-                    >
-                  </section>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a href="tel:+1(844) 565-0226"
-        ><div class="modal fade show custompopup" style="display: block">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content pt-0">
-              <div class="modal-footer border-0">
-                <button
-                  type="button "
-                  class="btn btn-secondary btnModal"
-                  data-bs-dismiss="modal"
-                >
-                  <i class="fa fa-close" aria-hidden="true"></i>
-                </button>
-              </div>
-              <div class="bannerPopup">
-                <div class="row">
-                  <div class="col-md-12 text-center">
-                    <h4 class="mb-0 popuptext">
-                      <img
-                        alt=""
-                        loading="lazy"
-                        width="50"
-                        height="50"
-                        decoding="async"
-                        data-nimg="1"
-                        sizes="100vw"
-                       
-                        src="../assets/booking.png"
-                        style="color: transparent; width: 100%; height: auto"
-                      />
-                    </h4>
-                    <p class="my-2 paratextPopup">
-                      Talk to a travel expert and Save 25%
-                    </p>
-                    <div class="booking-mobile">
-                      <h3>
-                        <a href="tel:+1(844) 565-0226"
-                          ><i class="fa-solid fa-headset"></i> +1(844) 565-0226</a
-                        >
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="bool text-center my-3">
-                <h2 class="wHeding">24/7 Reservation Support</h2>
-              </div>
-              <ul class="list-view-items">
-                <li>
-                  
-                  Booking
-                </li>
-                <li>Manage <br />Booking</li>
-                <li>Cancellation</li>
-                <li>Customer <br />Service</li>
-              </ul>
-              <div class="bg_dark_box pop-up-content-box text-center">
-                <img
-                  alt="logo"
-                  loading="lazy"
-                  width="50"
-                  height="50"
-                  decoding="async"
-                  data-nimg="1"
-                  class="logo-img"
-                  sizes="100vw"
-                 
-                  src="../assets/plane2.jpg"
-                  style="color: transparent; width: 100%; height: auto"
-                /><img
-                  alt="calling-cus"
-                  loading="lazy"
-                  width="50"
-                  height="50"
-                  decoding="async"
-                  data-nimg="1"
-                  class="calling-cus-img"
-                 
-                  src="../assets/popup-img.png"
-                  style="color: transparent"
-                />
-              </div>
-              <div class="exbt_cl">
-                <h5>
-                  <i class="fa-solid fa-phone-volume"></i
-                  ><span> Phone Only Offers </span>+1(844) 565-0226
-                </h5>
-              </div>
-            </div>
-          </div>
-        </div></a
-      >
-      <div class="mob_section">
-        <div class="air_spacial_phone_view">
-          <a
-            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-z4r21k"
-            href="tel:+1(844) 565-0226"
-            ><div class="air_spacial_main">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="air_logo_area">
-                      <h4>
-                        <img
-                          alt=""
-                          loading="lazy"
-                          width="50"
-                          height="50"
-                          decoding="async"
-                          data-nimg="1"
-                          sizes="100vw"
-                         
-                          src="../assets/booking.png"
-                          style="color: transparent; width: 100%; height: auto"
-                        />
-                      </h4>
-                      <h5>Expedía Reservations!!</h5>
-                      <h6>Un-Published Fares</h6>
-                    </div>
-                    <div class="air_spacial_middle">
-                      <h4>Saved For Our Callers</h4>
-                      <span class="air_spacial_middle3"
-                        ><h5>
-                          We also provide support for Expedía customers
-                        </h5></span
-                      >
-                    </div>
-                    <div class="air_spacial_middle2">
-                      <p>
-                        New Reservations, Changes, Cancellations &amp; Customer
-                        Service
-                      </p>
-                      <h4>No Hold Time</h4>
-                      <h5><i class="fa-solid fa-phone"></i> Call Now</h5>
-                      <h6>Agent Available</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="air_spacial_fix_bottom">
-                <h4><i class="fa-solid fa-phone"></i> +1(844) 565-0226</h4>
-              </div>
-            </div></a
-          >
-        </div>
-      </div>
-      <div
-        class="container-fluid banner-bg"
-        style="background-image: url('/assets/vouelosbaratos-img.jpg')"
-      >
-        <div class="container searh-engain">
-          <div class="row">
-            <div class="col-12 col-sm-12 col-lg-6 col-xl-6">
-              <div class="marg-top">
-                <h1>Book Your Perfect Escape with us</h1>
-                <p>
-                  Take a little break from the work strss of everyday. Discover
-                  plan trip and explore beautiful destinations.
-                </p>
-              </div>
-            </div>
-            <div class="col-12 col-sm-12 col-lg-6 col-xl-6 p-0">
-              <div class="tab-content" style="display: block">
-                <div
-                  class="tab-pane fade show active"
-                  role="tabpanel"
-                  aria-labelledby="home-tab"
-                >
-                  <div class="form-check form-check-inline mb-3">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="tripType"
-                      value="roundTrip"
-                      checked=""
-                    /><label class="form-check-label" for="roundTrip"
-                      >Round Trip</label
-                    >
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="tripType"
-                      value="oneWay"
-                    /><label class="form-check-label" for="oneWay"
-                      >One Way</label
-                    >
-                  </div>
-                  <div class="row">
-                    <div class="col-12 col-sm-12 col-lg-12 col-xl-12 p-1">
-                      <label>From Airport</label>
-                      <div class="input-group">
-                        <div class="icon3">
-                          <img
-                            class=""
-                            id=""
-                            alt=""
-                            src="../assets/location.png"
-                          />
-                        </div>
-                        <input
-                          class="form-control"
-                          type="text"
-                          placeholder="Flying From"
-                          value=""
-                          style="border-radius: 5px"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-12 col-sm-12 col-lg-12 col-xl-12 p-1">
-                      <label>To Airport</label>
-                      <div class="input-group">
-                        <div class="icon3">
-                          <img
-                            class=""
-                            id=""
-                            alt=""
-                            src="../assets/plane_down.png"
-                          />
-                        </div>
-                        <input
-                          class="form-control"
-                          type="text"
-                          placeholder="Flying To"
-                          value=""
-                          style="border-radius: 5px"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-12 col-sm-12 col-lg-12 col-xl-12 p-1">
-                      <label>Departure Date</label>
-                      <div class="input-group">
-                        <div class="icon3">
-                          <img
-                            class=""
-                            id=""
-                            alt=""
-                            src="../assets/dateoick.png"
-                          />
-                        </div>
-                        <div
-                          class="MuiFormControl-root MuiTextField-root css-165mck1"
-                        >
-                          <div
-                            class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error MuiInputBase-formControl MuiInputBase-adornedEnd css-1bn53lx"
-                          >
-                            <input
-                              aria-invalid="true"
-                              autocomplete="off"
-                              id=":r0:"
-                              placeholder="MM/DD/YYYY"
-                              type="text"
-                              inputmode="text"
-                              class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-1uvydh2"
-                              value="MM/DD/YYYY"
-                            />
-                            <div
-                              class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1nvf7g0"
-                            >
-                              <button
-                                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-slyssw"
-                                tabindex="0"
-                                type="button"
-                                aria-label="Choose date"
-                              >
-                                <svg
-                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
-                                  focusable="false"
-                                  aria-hidden="true"
-                                  viewBox="0 0 24 24"
-                                  data-testid="CalendarIcon"
-                                >
-                                  <path
-                                    d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
-                                  ></path></svg
-                                ><span
-                                  class="MuiTouchRipple-root css-w0pj6f"
-                                ></span>
-                              </button>
-                            </div>
-                            <fieldset
-                              aria-hidden="true"
-                              class="MuiOutlinedInput-notchedOutline css-igs3ac"
-                            >
-                              <legend class="css-ihdtdm">
-                                <span class="notranslate">​</span>
-                              </legend>
-                            </fieldset>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-sm-12 col-lg-12 col-xl-12 p-1">
-                      <label>Return Date</label>
-                      <div class="input-group">
-                        <div class="icon3">
-                          <img
-                            class=""
-                            id=""
-                            alt=""
-                            src="../assets/dateoick.png"
-                          />
-                        </div>
-                        <div
-                          class="MuiFormControl-root MuiTextField-root css-165mck1"
-                        >
-                          <div
-                            class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error MuiInputBase-formControl MuiInputBase-adornedEnd css-1bn53lx"
-                          >
-                            <input
-                              aria-invalid="true"
-                              autocomplete="off"
-                              id=":r2:"
-                              placeholder="MM/DD/YYYY"
-                              type="text"
-                              inputmode="text"
-                              class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-1uvydh2"
-                              value="MM/DD/YYYY"
-                            />
-                            <div
-                              class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1nvf7g0"
-                            >
-                              <button
-                                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-slyssw"
-                                tabindex="0"
-                                type="button"
-                                aria-label="Choose date"
-                              >
-                                <svg
-                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
-                                  focusable="false"
-                                  aria-hidden="true"
-                                  viewBox="0 0 24 24"
-                                  data-testid="CalendarIcon"
-                                >
-                                  <path
-                                    d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
-                                  ></path></svg
-                                ><span
-                                  class="MuiTouchRipple-root css-w0pj6f"
-                                ></span>
-                              </button>
-                            </div>
-                            <fieldset
-                              aria-hidden="true"
-                              class="MuiOutlinedInput-notchedOutline css-igs3ac"
-                            >
-                              <legend class="css-ihdtdm">
-                                <span class="notranslate">​</span>
-                              </legend>
-                            </fieldset>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-sm-12 col-lg-12 col-xl-12 p-1">
-                      <label>Add Travelers</label>
-                      <div class="dropdown">
-                        <div class="icon3">
-                          <img
-                            class=""
-                            id=""
-                            alt=""
-                            src="../assets/passenger_iim.png"
-                          />
-                        </div>
-                        <div class="class-selection-container">
-                          <div class="input-group">
-                            <input
-                              type="text"
-                              readonly=""
-                              class="form-control"
-                              value="Economy - Adults: 1 - Children: 0"
-                              style="border-radius: 5px"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="col-12 col-sm-12 col-lg-12 col-xl-12 d-grid gap-2 p-1"
-                    >
-                      <button class="btn btn-primary" type="button">
-                        Search Flights
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container-xl inner-page">
-        <div class="col-12 mt-5">
-          <h2>We also provide support for Expedía customers</h2>
-          <ul>
-            <li>Call Expedía</li>
-            <li>Flight Reservations Desk</li>
-            <li>Flight Ticket Booking</li>
-            <li>Flight Ticket Reservation</li>
-            <li>Flight Reservation</li>
-            <li>Flight Booking</li>
-            <li>Call Expedía Toll Free Number</li>
-            <li>Book Domestic &amp; International</li>
-            <li>Book Your Flight Ticket</li>
-            <li>24/7 Reservation Support</li>
-            <li>Booking, Changes, Cancellation</li>
-            <li>Toll Free Number</li>
-            <li>24/7 Customer Support</li>
-            <li>Call Expedía Number</li>
-            <li>Expedía Travel</li>
-            <li>Expedía</li>
-            <li>
-              We're here to save you time by offering immediate assistance with
-              new reservations
-            </li>
-            <li>
-              Ticket changes, Ticket cancellations, and customer service—all
-              without the wait
-            </li>
-            <li>
-              Call today for exclusive fare deals and let us take care of your
-              travel needs
-            </li>
-          </ul>
-          <p>
-            We are libroboleto.com‘, an airlines reservations agency. We also
-            provide support for Expedia customers and we help you to book
-            Un-published airlines Fares for New Reservations, Airlines Ticket
-            Changes, Airlines Ticket Cancellations &amp; Customer Service with
-            no hold time over the call. Reason of supporting Expedia Customers
-            is a long time hold on Expedia Support Desk, We want to save your
-            time infact you pay something to Expedia for their services so you
-            pay us the same if we solve your issues. We Assure that you can call
-            us now to get an Agent Available. We have Major airlines fares and
-            discount deals on Domestic and International flights. You can
-            contact us and call for 24/7 Support. You can call for Tickets
-            Booking, Manage Booking, Ticket Cancellation, and Customer Service.
-            We have Phone Only Offers and call answer in Seconds. We provide
-            amazing flight deals at the last minute on all airlines. You can add
-            travelers. We are now available as a travel agency and we also help
-            customers on behalf of other travel agencies like Expedía but please
-            note that we are not affiliate with other travel agencies and
-            airlines. You can call us now for Exclusive Fare Deals.<br />Our
-            target audience are people who are looking for Expedía Support and
-            un-published fares and new reservations, changes, cancellations
-            &amp; customer service. Our unique selling points are over the call
-            for you with no hold time and our 24/7 customer support.
-          </p>
-          <br />
-          <h2>
-            As a travel agency we try to help air travelers for book, manage,
-            cancel their flight
-          </h2>
-          <h5><i>Best search terms to find us on google search engine</i></h5>
-          <ul>
-            <li>Expedia Airlines Flight Reservations Over The call</li>
-            <li>Expedia Airlines Flight Manage Booking Over The Call</li>
-            <li>Expedia Airlines Flight Ticket Cancellations Over The Call</li>
-            <li>Libroboleto expedia Toll Free Number</li>
-            <li>Libroboleto expedìa Phone Number</li>
-            <li>Libroboleto expedìa Customer Support</li>
-            <li>Talk to libroboleto expedia Customer Service</li>
-          </ul>
-        </div>
-      </div>
-      <div class="newslatter">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="Newsltrwrapper">
-                <h2>
-                  Join our Newsletter To Keep Up To<br />
-                  Date With Us!
-                </h2>
-                <div class="NewForm">
-                  <input
-                    type="email"
-                    class="form-control"
-                    placeholder="Enter Your Email"
-                    name="email"
-                  /><input class="SbmtBtn" type="submit" value="Submit" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container-fluid footer-bg">
-        <div class="container-lg">
-          <div class="row">
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-4">
-              <h6>About us</h6>
-              <p>
-                Welcome to libroboleto.com — your ultimate guide to discovering
-                the world through the pages of a book. At libroboleto, we
-                believe that every journey starts with a story, and every
-                destination has a tale waiting to be told.
-              </p>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-2 col-xl-2">
-              <h6>Quick Links</h6>
-              <ul>
-                <li>
-                  <a href="https://www.libroboleto.com/about-us">
-                    <i class="fa-regular fa-square-check"></i> About Us</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.libroboleto.com/terms-conditions">
-                    <i class="fa-regular fa-square-check"></i> Terms &amp;
-                    Conditions</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.libroboleto.com/privacy-policy">
-                    <i class="fa-regular fa-square-check"></i> Privacy Policy</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.libroboleto.com/contact-us">
-                    <i class="fa-regular fa-square-check"></i> Contact Us</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.libroboleto.com/refund-policy">
-                    <i class="fa-regular fa-square-check"></i> Refund Policy</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.libroboleto.com/site-map">
-                    <i class="fa-regular fa-square-check"></i> Site Map</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-3 col-xl-3">
-              <h6>Contact Info</h6>
-              <ul>
-                <li>
-                  <a href="https://www.libroboleto.com/expedia#"
-                    ><i class="fa-solid fa-location-dot"></i>3 PINE TREE DR
-                    WESTAMPTON, NJ</a
-                  >
-                </li>
-                <li>
-                  <a href="mailto:info@libroboleto.com">
-                    <i class="fa-regular fa-envelope"></i>
-                    info@libroboleto.com</a
-                  >
-                </li>
-                <li>
-                  <a href="tel:+1(844) 565-0226"
-                    ><i class="fa-solid fa-phone-volume"></i> ++1(844) 565-0226</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div class="col-lg-3">
-              <h6>Payment Method</h6>
-              <div class="payment_icon">
-                <ul>
-                  <li>
-                    <img
-                      alt=""
-                      imagesizes="32"
-                      loading="lazy"
-                      width="50"
-                      height="30"
-                      decoding="async"
-                      data-nimg="1"
-                      class="img-fluid"
-                      
-                      src="../assets/icons-p10.png"
-                      style="color: transparent"
-                    />
-                  </li>
-                  <li>
-                    <img
-                      alt=""
-                      imagesizes="32"
-                      loading="lazy"
-                      width="50"
-                      height="30"
-                      decoding="async"
-                      data-nimg="1"
-                      class="img-fluid"
-                     
-                      src="../assets/icons-p7.png"
-                      style="color: transparent"
-                    />
-                  </li>
-                  <li>
-                    <img
-                      alt=""
-                      imagesizes="32"
-                      loading="lazy"
-                      width="50"
-                      height="30"
-                      decoding="async"
-                      data-nimg="1"
-                      class="img-fluid"
-                     
-                      src="../assets/icons-p11.png"
-                      style="color: transparent"
-                    />
-                  </li>
-                  <li>
-                    <img
-                      alt=""
-                      imagesizes="32"
-                      loading="lazy"
-                      width="50"
-                      height="30"
-                      decoding="async"
-                      data-nimg="1"
-                      class="img-fluid"
-                     
-                      src="../assets/icons-p12.png"
-                      style="color: transparent"
-                    />
-                  </li>
-                  <li>
-                    <img
-                      alt=""
-                      imagesizes="32"
-                      loading="lazy"
-                      width="50"
-                      height="30"
-                      decoding="async"
-                      data-nimg="1"
-                      class="img-fluid"
-                      
-                      src="../assets/icons-p9.png"
-                      style="color: transparent"
-                    />
-                  </li>
-                  <li>
-                    <img
-                      alt=""
-                      imagesizes="32"
-                      loading="lazy"
-                      width="50"
-                      height="30"
-                      decoding="async"
-                      data-nimg="1"
-                      class="img-fluid"
-                     
-                      src="../assets/icons-p8.png"
-                      style="color: transparent"
-                    />
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-12 col-sm-12 col-lg-12 col-xl-12 top-margin">
-              <p>
-                <strong>Disclaimer : </strong>The data provided on
-                libroboleto.com is intended for general informational purposes
-                only. While we strive to ensure the accuracy and currency of the
-                information presented on the site, we make no guarantee or
-                representation, whether implied or expressed, regarding the
-                accuracy, completeness, or reliability of the information
-                displayed.<br />To provide you with the best prices on airline
-                tickets and hotel reservations, libroboleto.com utilizes search
-                partners to scan multiple travel websites. We collaborate with
-                third-party travel vendors and travel consolidators. Please note
-                that we have no direct or indirect affiliations with any
-                airlines. All prices shown on our website include applicable
-                taxes and fees.<br />The flight search engine used on our site
-                is solely a tool provided by a third party for informational
-                purposes. libroboleto.com is not affiliated with any of the
-                businesses featured on this search engine.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container-fluid footer-bottom">
-        <div class="container-lg footer-border">
-          <div class="row">
-            <div class="col-12 col-lg-8">
-              <p>Copyright © 2024 libroboleto.com. All Rights Reserved.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="fixed-bottom call-bg d-block d-md-block d-lg-none">
-        <a href="tel:+1(844) 565-0226"
-          ><p>Speical Discounted Deals On Phone Call Only</p>
-          <h4>
-            <img
-              alt=""
-              imagesizes="32"
-              loading="lazy"
-              width="50"
-              height="30"
-              decoding="async"
-              data-nimg="1"
-              class="img-fluid"
-             
-              src="../assets/call.jpg"
-              style="color: transparent"
-            />
-            +1(844) 565-0226
-          </h4></a
-        >
-      </div>
-      <div class="modal fade show" style="display: none">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content sear-popup">
-            <div class="modal-body py-0">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-12 search-top">
-                    <div class="row text-center">
-                      <div class="col-5 col-sm-5 col-lg-5 col-xl-5">
-                        <h6></h6>
-                        <h2></h2>
-                      </div>
-                      <div class="col-2 col-sm-2 col-lg-2 col-xl-2">
-                        <div class="search-aero">
-                          <i
-                            class="fa fa-long-arrow-left"
-                            aria-hidden="true"
-                          ></i>
-                        </div>
-                        <div class="search-aero">
-                          <i
-                            class="fa fa-long-arrow-right"
-                            aria-hidden="true"
-                          ></i>
-                        </div>
-                      </div>
-                      <div class="col-5 col-sm-5 col-lg-5 col-xl-5">
-                        <h6></h6>
-                        <h2></h2>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-12 search-med text-center">
-                    <div class="discountoffer">
-                      <h6>Limited time Offer</h6>
-                      <h5>Call Now For Exclusive Fares Deals</h5>
-                      <br /><img
-                        alt="Loader"
-                        loading="lazy"
-                        width="80"
-                        height="80"
-                        decoding="async"
-                        data-nimg="1"
-                        class="img-fluid"
-                       
-                        src="../assets/loader.gif"
-                        style="color: transparent"
-                      />
-                      <p>+1(844) 565-0226</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  
-  </body>
+
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">Travel<span>Xpert</span></div>
+            <div class="header-phone">
+                <div class="phone-icon">📞</div>
+                <div class="phone-content">
+                    <div class="phone-label">Call us for the best deals</div>
+                    <div class="phone-number">+1-123-456-7890</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#deals">Deals</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#legitimate-agency">Legitimate Agency</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+                <li><a href="#terms">Terms</a></li>
+            </ul>
+            <div class="nav-search">
+                <span>Search</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Find Your Perfect Vacation Deals</h1>
+                <p class="hero-subtitle">Book your trip with us and save up to 40% on hotels, flights, and vacation packages worldwide.</p>
+                <a href="#deals" class="hero-btn">Explore Deals</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="search-box">
+        <div class="container">
+            <form class="search-form">
+                <div class="search-group">
+                    <label for="destination">Destination</label>
+                    <input type="text" id="destination" class="search-input" placeholder="Where are you going?">
+                </div>
+                <div class="search-group">
+                    <label for="check-in">Check In</label>
+                    <input type="date" id="check-in" class="search-input">
+                </div>
+                <div class="search-group">
+                    <label for="check-out">Check Out</label>
+                    <input type="date" id="check-out" class="search-input">
+                </div>
+                <div class="search-group">
+                    <label for="travelers">Travelers</label>
+                    <select id="travelers" class="search-input">
+                        <option value="1">1 Adult</option>
+                        <option value="2">2 Adults</option>
+                        <option value="3">3 Adults</option>
+                        <option value="4">4 Adults</option>
+                    </select>
+                </div>
+                <div class="search-group">
+                    <label for="">&nbsp;</label>
+                    <button type="submit" class="search-button">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Deals Section -->
+    <section id="deals" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hot Travel Deals</h2>
+                <p class="section-subtitle">Exclusive deals with huge savings on popular destinations</p>
+            </div>
+            <div class="deals-grid">
+                <div class="deal-card">
+                    <div class="deal-image">
+                        <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1365&q=80" alt="Maldives Resort">
+                        <div class="deal-tag">30% OFF</div>
+                    </div>
+                    <div class="deal-content">
+                        <h3 class="deal-title">Luxury Maldives Escape</h3>
+                        <div class="deal-stars">★★★★★</div>
+                        <p class="deal-description">Experience paradise with overwater bungalows and crystal clear waters.</p>
+                        <div class="deal-price">$1,299 <span>per person</span></div>
+                        <div class="deal-meta">
+                            <span>7 Nights</span>
+                            <span>All-Inclusive</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="deal-card">
+                    <div class="deal-image">
+                        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1738&q=80" alt="Bali Resort">
+                        <div class="deal-tag">25% OFF</div>
+                    </div>
+                    <div class="deal-content">
+                        <h3 class="deal-title">Bali Beach Resort</h3>
+                        <div class="deal-stars">★★★★☆</div>
+                        <p class="deal-description">Relax in Bali with this incredible deal including spa treatments.</p>
+                        <div class="deal-price">$899 <span>per person</span></div>
+                        <div class="deal-meta">
+                            <span>5 Nights</span>
+                            <span>Breakfast Included</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="deal-card">
+                    <div class="deal-image">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" alt="Paris Getaway">
+                        <div class="deal-tag">20% OFF</div>
+                    </div>
+                    <div class="deal-content">
+                        <h3 class="deal-title">Paris City Break</h3>
+                        <div class="deal-stars">★★★★☆</div>
+                        <p class="deal-description">Explore the romantic streets of Paris with this perfect weekend getaway.</p>
+                        <div class="deal-price">$749 <span>per person</span></div>
+                        <div class="deal-meta">
+                            <span>4 Nights</span>
+                            <span>Flight + Hotel</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="deal-card">
+                    <div class="deal-image">
+                        <img src="https://images.unsplash.com/photo-1599640842225-85d111c60e6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Caribbean Cruise">
+                        <div class="deal-tag">40% OFF</div>
+                    </div>
+                    <div class="deal-content">
+                        <h3 class="deal-title">Caribbean Cruise</h3>
+                        <div class="deal-stars">★★★★★</div>
+                        <p class="deal-description">Island hop through the stunning Caribbean with luxury onboard amenities.</p>
+                        <div class="deal-price">$999 <span>per person</span></div>
+                        <div class="deal-meta">
+                            <span>7 Nights</span>
+                            <span>All-Inclusive</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn-view-all">View All Deals</a>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose TravelXpert</h2>
+                <p class="section-subtitle">We're committed to making your travel experience extraordinary</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">💰</div>
+                    <h3 class="feature-title">Best Price Guarantee</h3>
+                    <p>Find a lower price elsewhere? We'll match it and give you an additional 10% discount.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🛡️</div>
+                    <h3 class="feature-title">Secure Booking</h3>
+                    <p>Book with confidence knowing your payments and information are protected.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎁</div>
+                    <h3 class="feature-title">Exclusive Deals</h3>
+                    <p>Access special offers and packages not available on other travel sites.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔍</div>
+                    <h3 class="feature-title">No Hidden Fees</h3>
+                    <p>Transparent pricing with no hidden charges or surprise fees.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Popular Destinations</h2>
+                <p class="section-subtitle">Explore our most sought-after vacation destinations</p>
+            </div>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1582972236019-ea4af5ffe587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="New York">
+                    <div class="destination-overlay">
+                        <h3 class="destination-name">New York</h3>
+                        <div class="destination-count">120+ Hotels</div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="London">
+                    <div class="destination-overlay">
+                        <h3 class="destination-name">London</h3>
+                        <div class="destination-count">150+ Hotels</div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Tokyo">
+                    <div class="destination-overlay">
+                        <h3 class="destination-name">Tokyo</h3>
+                        <div class="destination-count">180+ Hotels</div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1096&q=80" alt="Rome">
+                    <div class="destination-overlay">
+                        <h3 class="destination-name">Rome</h3>
+                        <div class="destination-count">100+ Hotels</div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Sydney">
+                    <div class="destination-overlay">
+                        <h3 class="destination-name">Sydney</h3>
+                        <div class="destination-count">90+ Hotels</div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Dubai">
+                    <div class="destination-overlay">
+                        <h3 class="destination-name">Dubai</h3>
+                        <div class="destination-count">170+ Hotels</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Us</h2>
+                <p class="section-subtitle">Learn about our company and mission</p>
+            </div>
+            <div class="about-content">
+                <div class="about-hero">
+                    <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="TravelXpert Team">
+                    <div class="about-hero-overlay">
+                        <h2>We Make Travel Dreams Come True</h2>
+                        <p>Providing exceptional travel experiences since 2008</p>
+                    </div>
+                </div>
+                
+                <div class="about-section">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2008, TravelXpert began with a simple mission: to make travel accessible, affordable, and enjoyable for everyone. What started as a small team of passionate travelers working out of a tiny office in New York has now grown into one of the most trusted travel agencies in the industry.</p>
+                    <p>Our journey hasn't always been smooth – we've navigated through economic downturns, changing travel trends, and even a global pandemic. Yet through it all, we've remained committed to our core values and to serving our customers with integrity and excellence.</p>
+                    <p>Today, TravelXpert is proud to help thousands of travelers each month discover new destinations, experience different cultures, and create memories that last a lifetime. We've expanded our services to include a wide range of travel options, from budget-friendly vacations to luxury experiences, always ensuring that each trip is tailored to our customers' unique preferences and needs.</p>
+                </div>
+                
+                <div class="about-section">
+                    <h2>Our Mission & Values</h2>
+                    <p><strong>Our Mission:</strong> To empower travelers to explore the world confidently by providing exceptional service, competitive prices, and personalized travel solutions.</p>
+                    <p><strong>Our Vision:</strong> To be the most trusted name in travel, known for excellence, innovation, and customer satisfaction.</p>
+                    <p><strong>Our Core Values:</strong></p>
+                    <div class="about-grid">
+                        <div class="about-card">
+                            <div class="about-card-icon">🤝</div>
+                            <h3>Integrity</h3>
+                            <p>We operate with honesty, transparency, and ethical practices in all our dealings.</p>
+                        </div>
+                        <div class="about-card">
+                            <div class="about-card-icon">⭐</div>
+                            <h3>Excellence</h3>
+                            <p>We strive for excellence in every aspect of our service and continually seek to improve.</p>
+                        </div>
+                        <div class="about-card">
+                            <div class="about-card-icon">❤️</div>
+                            <h3>Passion</h3>
+                            <p>We are passionate about travel and dedicated to sharing that passion with our customers.</p>
+                        </div>
+                        <div class="about-card">
+                            <div class="about-card-icon">🔍</div>
+                            <h3>Innovation</h3>
+                            <p>We embrace new technologies and ideas to enhance the travel experience for our customers.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-section">
+                    <h2>What Sets Us Apart</h2>
+                    <ul>
+                        <li><strong>Personalized Service:</strong> We take the time to understand your travel preferences, needs, and dreams to create a customized experience just for you.</li>
+                        <li><strong>Expert Knowledge:</strong> Our team of travel advisors has extensive knowledge and first-hand experience with destinations worldwide.</li>
+                        <li><strong>Best Price Guarantee:</strong> We're committed to offering competitive prices and will match any better deal you find elsewhere.</li>
+                        <li><strong>24/7 Support:</strong> We provide round-the-clock support to assist you before, during, and after your trip.</li>
+                        <li><strong>Trusted Partnerships:</strong> We've built strong relationships with leading airlines, hotels, and tour operators to secure exclusive deals and benefits for our clients.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="stats-section">
+                <div class="container">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Years of Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">250,000+</div>
+                            <div class="stat-label">Happy Travelers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">180+</div>
+                            <div class="stat-label">Destinations</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Customer Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-section">
+                <h2 class="section-title" style="display: block; text-align: center; margin-bottom: 30px;">Meet Our Leadership Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Michael Roberts">
+                        </div>
+                        <div class="team-info">
+                            <div class="team-name">Michael Roberts</div>
+                            <div class="team-position">Founder & CEO</div>
+                            <div class="team-bio">Michael founded TravelXpert in 2008 after 15 years in the travel industry. His vision and leadership have been instrumental in the company's growth and success.</div>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1376&q=80" alt="Sarah Johnson">
+                        </div>
+                        <div class="team-info">
+                            <div class="team-name">Sarah Johnson</div>
+                            <div class="team-position">Chief Operations Officer</div>
+                            <div class="team-bio">With over 20 years of experience in travel operations, Sarah ensures that every aspect of our service meets the highest standards of quality and efficiency.</div>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="David Chen">
+                        </div>
+                        <div class="team-info">
+                            <div class="team-name">David Chen</div>
+                            <div class="team-position">Chief Technology Officer</div>
+                            <div class="team-bio">David leads our technology initiatives, leveraging his expertise to create innovative solutions that enhance the booking experience for our customers.</div>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1461&q=80" alt="Emily Rodriguez">
+                        </div>
+                        <div class="team-info">
+                            <div class="team-name">Emily Rodriguez</div>
+                            <div class="team-position">Head of Customer Experience</div>
+                            <div class="team-bio">Emily's dedication to exceptional customer service has helped establish TravelXpert's reputation for outstanding support and personalized attention.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legitimate Agency Section -->
+    <section id="legitimate-agency" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Legitimate Travel Agency</h2>
+                <p class="section-subtitle">Our credentials and commitments</p>
+            </div>
+            <div class="legal-content">
+                <div class="legal-section">
+                    <h2>About Our Legitimate Travel Agency</h2>
+                    <p>TravelXpert is a fully licensed and accredited travel agency that has been helping travelers find the best deals on flights, hotels, vacation packages, and more for over 15 years. We are committed to providing our customers with exceptional service, competitive prices, and peace of mind when booking their travel arrangements.</p>
+                    <p>As a legitimate travel agency, we adhere to all industry regulations and standards. We are registered with all major travel associations and hold all necessary licenses to operate as a travel agency in the United States and internationally.</p>
+                </div>
+
+                <div class="legal-section">
+                    <h2>Our Credentials</h2>
+                    <p>TravelXpert is proud to be associated with the following organizations and hold the following credentials:</p>
+                    <ul>
+                        <li>✓ Accredited by the Better Business Bureau (BBB) with an A+ rating</li>
+                        <li>✓ Member of the American Society of Travel Advisors (ASTA)</li>
+                        <li>✓ International Air Transport Association (IATA) Accredited Agent</li>
+                        <li>✓ Cruise Lines International Association (CLIA) Certified</li>
+                        <li>✓ Travel Industry Council (TIC) Member</li>
+                        <li>✓ Licensed by the Department of Transportation (DOT)</li>
+                    </ul>
+                    
+                    <h3>Our Certifications</h3>
+                    <p>Below are some of the certifications and partnerships that validate our status as a legitimate travel agency:</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 30px 0;">
+                        <div style="flex: 1; min-width: 200px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                            <div style="height: 150px; overflow: hidden;">
+                                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="BBB Accreditation" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div style="padding: 15px; text-align: center; font-weight: 600;">BBB Accreditation</div>
+                        </div>
+                        <div style="flex: 1; min-width: 200px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                            <div style="height: 150px; overflow: hidden;">
+                                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="ASTA Membership" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div style="padding: 15px; text-align: center; font-weight: 600;">ASTA Membership</div>
+                        </div>
+                        <div style="flex: 1; min-width: 200px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                            <div style="height: 150px; overflow: hidden;">
+                                <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="IATA Certification" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div style="padding: 15px; text-align: center; font-weight: 600;">IATA Certification</div>
+                        </div>
+                        <div style="flex: 1; min-width: 200px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                            <div style="height: 150px; overflow: hidden;">
+                                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="CLIA Certification" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div style="padding: 15px; text-align: center; font-weight: 600;">CLIA Certification</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="legal-section">
+                    <h2>Why Choose Our Travel Agency?</h2>
+                    <ol>
+                        <li><strong>Verified Partnerships:</strong> We have direct partnerships with major airlines, hotel chains, cruise lines, and car rental companies, allowing us to offer legitimate deals and special rates.</li>
+                        <li><strong>Transparent Pricing:</strong> All our prices include taxes and fees, with no hidden charges or surprise costs when you check out.</li>
+                        <li><strong>Secure Booking:</strong> Our website utilizes industry-standard encryption and security measures to protect your personal and payment information.</li>
+                        <li><strong>24/7 Customer Support:</strong> Our team of travel experts is available around the clock to assist with any questions or concerns before, during, or after your trip.</li>
+                        <li><strong>Travel Protection:</strong> We offer optional travel insurance and protection plans to give you added peace of mind in case of unexpected changes or emergencies.</li>
+                        <li><strong>Satisfaction Guarantee:</strong> We stand behind our service with a satisfaction guarantee, ensuring you're happy with your travel arrangements.</li>
+                    </ol>
+                </div>
+
+                <div class="legal-section">
+                    <h2>How to Verify We Are a Legitimate Travel Agency</h2>
+                    <p>We understand that in today's digital world, it's important to verify the legitimacy of any online business, especially when it comes to travel. Here are some ways you can verify our status as a legitimate travel agency:</p>
+                    <ul>
+                        <li>✓ Check our BBB rating and reviews at the Better Business Bureau website</li>
+                        <li>✓ Verify our IATA number through the IATA agency finder</li>
+                        <li>✓ Look for our secure website (https://) and payment processing</li>
+                        <li>✓ Read customer testimonials and reviews on trusted third-party sites</li>
+                        <li>✓ Contact our customer service team directly with any questions or concerns</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">We're here to help with your travel needs</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>We're here to help! Whether you have questions about a booking, need assistance planning your trip, or want to provide feedback about your experience, our team is ready to assist you.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-text">
+                                <h3>Phone</h3>
+                                <p>+1-123-456-7890</p>
+                                <p>Toll-free within the United States</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-icon">✉️</div>
+                            <div class="contact-text">
+                                <h3>Email</h3>
+                                <p>support@travelxpert.com</p>
+                                <p>We'll respond within 24 hours</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-icon">🏢</div>
+                            <div class="contact-text">
+                                <h3>Office</h3>
+                                <p>123 Travel Street, Suite 100<br>New York, NY 10001<br>United States</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="office-hours">
+                        <h3>Office Hours</h3>
+                        <p><strong>Monday - Friday:</strong> 9:00 AM - 9:00 PM ET</p>
+                        <p><strong>Saturday - Sunday:</strong> 10:00 AM - 6:00 PM ET</p>
+                        <p><strong>Phone Support:</strong> 24/7</p>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link">F</a>
+                        <a href="#" class="social-link">T</a>
+                        <a href="#" class="social-link">I</a>
+                        <a href="#" class="social-link">Y</a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject *</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="privacy" name="privacy" class="form-check-input" required>
+                            <label for="privacy" class="form-check-label">I have read and agree to the <a href="#privacy" style="color: var(--primary-color); text-decoration: underline;">Privacy Policy</a> and consent to the processing of my personal data.</label>
+                        </div>
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="map-section">
+                <h2 class="section-title" style="display: block; text-align: center; margin-bottom: 30px;">Our Location</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96708.34194018736!2d-74.03427096526456!3d40.75904131281401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2588f046ee661%3A0xa0b3281fcecc08c!2sManhattan%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1635271615693!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Section -->
+    <section id="privacy" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Privacy Policy</h2>
+                <p class="section-subtitle">How we protect and manage your data</p>
+            </div>
+            <div class="legal-content">
+                <div class="legal-section">
+                    <h2>1. Introduction</h2>
+                    <p>Welcome to TravelXpert's Privacy Policy. At TravelXpert, we respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
+                    <p>Please read this Privacy Policy carefully. If you do not agree with the terms of this Privacy Policy, please do not access the website or use our services.</p>
+                    <p>We reserve the right to make changes to this Privacy Policy at any time and for any reason. We will alert you about any changes by updating the "Last Updated" date of this Privacy Policy. You are encouraged to periodically review this Privacy Policy to stay informed of updates.</p>
+                </div>
+
+                <div class="legal-section">
+                    <h2>2. Information We Collect</h2>
+                    <p>We collect information that you provide directly to us, information we collect automatically when you use our services, and information from third-party sources.</p>
+                    
+                    <h3>2.1 Personal Information You Provide to Us</h3>
+                    <p>We may collect the following types of personal information when you register for an account, make a booking, contact our customer service, or otherwise interact with our services:</p>
+                    <ul>
+                        <li><strong>Contact Information:</strong> Name, email address, mailing address, phone number</li>
+                        <li><strong>Profile Information:</strong> Username, password, preferences, feedback, and survey responses</li>
+                        <li><strong>Booking Information:</strong> Travel itinerary details, traveler information (including passport details for international travel), payment information, accommodation preferences</li>
+                        <li><strong>Communication Information:</strong> Messages, emails, or other communications you send to us</li>
+                        <li><strong>Demographic Information:</strong> Age, date of birth, gender, nationality</li>
+                    </ul>
+                    
+                    <h3>2.2 Information We Collect Automatically</h3>
+                    <p>When you visit our website or use our services, we may automatically collect certain information about your device and usage of our services, including:</p>
+                    <ul>
+                        <li><strong>Device Information:</strong> IP address, browser type, operating system, device type, unique device identifiers</li>
+                        <li><strong>Usage Information:</strong> Pages or content viewed, search terms, links clicked, time spent on pages, browsing patterns, referral sources</li>
+                        <li><strong>Location Information:</strong> We may collect information about your approximate or precise location when you use our website or mobile applications</li>
+                        <li><strong>Cookies and Similar Technologies:</strong> We use cookies, web beacons, and similar technologies to collect information about your browsing behavior and preferences</li>
+                    </ul>
+                </div>
+
+                <div class="legal-section">
+                    <h2>3. How We Use Your Information</h2>
+                    <p>We use the information we collect for various purposes, including:</p>
+                    
+                    <h3>3.1 Providing and Improving Our Services</h3>
+                    <ul>
+                        <li>Process and manage your travel bookings, reservations, and payments</li>
+                        <li>Create and maintain your account</li>
+                        <li>Provide customer service and respond to your inquiries</li>
+                        <li>Improve and optimize our website, products, and services</li>
+                        <li>Develop new products, services, and features</li>
+                    </ul>
+                    
+                    <h3>3.2 Communications</h3>
+                    <ul>
+                        <li>Send booking confirmations, itineraries, and updates about your travel plans</li>
+                        <li>Send administrative messages, such as updates to our terms, privacy policy, or security alerts</li>
+                        <li>With your consent, send promotional communications, including marketing emails, special offers, and travel recommendations</li>
+                        <li>Conduct surveys and collect feedback</li>
+                    </ul>
+                </div>
+
+                <div class="legal-section">
+                    <h2>12. Google Ads</h2>
+                    <p>We use Google Ads to promote our services. Google Ads uses cookies and similar technologies to show you more relevant ads based on your browsing activity and interests. By using our website, you consent to the use of these technologies for advertising purposes.</p>
+                    <p>To learn more about how Google uses your data for advertising, please visit: <a href="https://policies.google.com/technologies/ads" target="_blank" style="color: var(--primary-color); text-decoration: underline;">https://policies.google.com/technologies/ads</a></p>
+                    <p>You can opt out of personalized advertising by visiting Google's Ad Settings.</p>
+                </div>
+
+                <div class="legal-section">
+                    <h2>13. Changes to This Privacy Policy</h2>
+                    <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will post the revised Privacy Policy on our website with an updated "Last Updated" date. We encourage you to periodically review this page to stay informed about our information practices.</p>
+                    <p>If we make material changes to this Privacy Policy, we will provide notice through our website or by other means, such as email.</p>
+                </div>
+
+                <div class="legal-section">
+                    <h2>14. Contact Us</h2>
+                    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us at:</p>
+                    <ul>
+                        <li>Email: privacy@travelxpert.com</li>
+                        <li>Phone: +1-123-456-7890</li>
+                        <li>Mail: TravelXpert Privacy Team, 123 Travel Street, Suite 100, New York, NY 10001</li>
+                    </ul>
+                </div>
+
+                <div class="legal-section">
+                    <p>Last Updated: March 1, 2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms and Conditions Section -->
+    <section id="terms" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Terms and Conditions</h2>
+                <p class="section-subtitle">The rules and regulations for using our services</p>
+            </div>
+            <div class="legal-content">
+                <div class="legal-section">
+                    <h2>1. Introduction</h2>
+                    <p>Welcome to TravelXpert. These terms and conditions outline the rules and regulations for the use of TravelXpert's website and services.</p>
+                    <p>By accessing this website or using our services, we assume you accept these terms and conditions in full. Do not continue to use TravelXpert's website or services if you do not accept all of the terms and conditions stated on this page.</p>
+                    <p>The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice, and any or all Agreements: "Client", "You" and "Your" refers to you, the person accessing this website and accepting the Company's terms and conditions. "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company. "Party", "Parties", or "Us", refers to both the Client and ourselves, or either the Client or ourselves.</p>
+                </div>
+
+                <div class="legal-section">
+                    <h2>2. Booking and Reservation Policies</h2>
+                    <h3>2.1 Booking Process</h3>
+                    <p>All bookings made through TravelXpert are subject to availability and confirmation. Once your booking has been confirmed, you will receive a confirmation email with all necessary details regarding your reservation.</p>
+                    
+                    <h3>2.2 Payment Terms</h3>
+                    <p>Full payment or a deposit (as specified at the time of booking) is required to confirm your reservation. The following payment methods are accepted:</p>
+                    <ul>
+                        <li>Credit/Debit Cards (Visa, MasterCard, American Express)</li>
+                        <li>PayPal</li>
+                        <li>Bank Transfers (for select bookings)</li>
+                    </ul>
+                    <p>For installment payments, specific terms will be provided at the time of booking.</p>
+                </div>
+
+                <div class="legal-section">
+                    <h2>3. Cancellation and Refund Policy</h2>
+                    <h3>3.1 Cancellation by You</h3>
+                    <p>Cancellation policies vary depending on the type of booking and the supplier's terms. Specific cancellation terms will be provided at the time of booking. Generally:</p>
+                    <ul>
+                        <li>For hotel bookings: Cancellations made 72 hours or more before check-in may receive a full refund minus administrative fees. Cancellations made less than 72 hours before check-in may incur penalties as specified by the hotel.</li>
+                        <li>For flight bookings: Airline cancellation policies apply. Most economy tickets are non-refundable or incur significant penalties for changes or cancellations.</li>
+                        <li>For vacation packages: Cancellation penalties vary based on the package components and how far in advance the cancellation is made.</li>
+                    </ul>
+                </div>
+
+                <div class="legal-section">
+                    <h2>10. Changes to Terms and Conditions</h2>
+                    <p>TravelXpert reserves the right to update, change, or replace any part of these Terms and Conditions by posting updates or changes to our website. It is your responsibility to check our website periodically for changes.</p>
+                    <p>Your continued use of the website following the posting of any changes constitutes acceptance of those changes.</p>
+                </div>
+
+                <div class="legal-section">
+                    <h2>11. Contact Information</h2>
+                    <p>If you have any questions about our Terms and Conditions, please contact us:</p>
+                    <ul>
+                        <li>By email: legal@travelxpert.com</li>
+                        <li>By phone: +1-123-456-7890</li>
+                        <li>By mail: TravelXpert Legal Department, 123 Travel Street, Suite 100, New York, NY 10001</li>
+                    </ul>
+                </div>
+
+                <div class="legal-section">
+                    <p>Last updated: March 1, 2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Stay updated with our latest travel deals, destination guides, and exclusive offers delivered straight to your inbox.</p>
+            <div class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Enter your email address">
+                <button class="newsletter-button">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <h3>About TravelXpert</h3>
+                    <p>TravelXpert is a legitimate travel agency providing exceptional service and the best deals on flights, hotels, vacation packages, and more since 2008.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">F</a>
+                        <a href="#" class="social-icon">T</a>
+                        <a href="#" class="social-icon">I</a>
+                        <a href="#" class="social-icon">Y</a>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#legitimate-agency">Legitimate Agency</a></li>
+                        <li><a href="#terms">Terms & Conditions</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#hotels">Hotel Bookings</a></li>
+                        <li><a href="#flights">Flight Bookings</a></li>
+                        <li><a href="#packages">Vacation Packages</a></li>
+                        <li><a href="#cruises">Cruise Bookings</a></li>
+                        <li><a href="#cars">Car Rentals</a></li>
+                        <li><a href="#insurance">Travel Insurance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <span class="footer-contact-icon">🏢</span>
+                            123 Travel Street, Suite 100<br>New York, NY 10001
+                        </li>
+                        <li>
+                            <span class="footer-contact-icon">📞</span>
+                            +1-123-456-7890
+                        </li>
+                        <li>
+                            <span class="footer-contact-icon">✉️</span>
+                            support@travelxpert.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 TravelXpert. All Rights Reserved. A Legitimate Travel Agency.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Call Now Button -->
+    <div class="call-popup" id="callPopupButton">
+        <div class="call-icon">📞</div>
+        <div class="call-text">
+            <div class="call-label">Call Now for Exclusive Deals</div>
+            <div class="call-number">+1-123-456-7890</div>
+        </div>
+    </div>
+
+    <!-- Booking Help Popup -->
+<div class="booking-popup" id="bookingPopup">
+    <div class="booking-popup-content">
+        <span class="close-popup">&times;</span>
+        
+        <div class="consultant-image">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Travel Consultant">
+        </div>
+        
+        <h2>Let Us Help You Book!</h2>
+        <p class="popup-subtitle">Speak with a travel expert and get assistance 24/7</p>
+        
+        <a href="tel:+11234567890" class="phone-button">
+            <span class="flag">🇺🇸</span>
+            <span>+1-123-456-7890</span>
+        </a>
+        
+        <a href="tel:+11234567890" class="phone-button">
+            <span class="flag">🇺🇸</span>
+            <span>+1-123-456-7890</span>
+        </a>
+        
+        <div class="country-selector">
+            <div class="country-button">
+                <span class="flag">🇺🇸</span>
+                <span>United States</span>
+            </div>
+        </div>
+        
+        <div class="reasons-section">
+            <h3>Why to book with call center</h3>
+            <div class="reason-item">
+                <div class="reason-icon">🎧</div>
+                <div class="reason-text">
+                    <div>Expert guidance by our</div>
+                    <strong>Top Travel experts</strong>
+                </div>
+            </div>
+            <div class="reason-item">
+                <div class="reason-icon">🔄</div>
+                <div class="reason-text">
+                    <div>Instant</div>
+                    <strong>Ticket confirmation</strong>
+                </div>
+            </div>
+            <div class="reason-item">
+                <div class="reason-icon">⏰</div>
+                <div class="reason-text">
+                    <div>24 X 7</div>
+                    <strong>Cancellation</strong>
+                </div>
+            </div>
+            <div class="reason-item">
+                <div class="reason-icon">💳</div>
+                <div class="reason-text">
+                    <div>Installment payment</div>
+                    <strong>Plans</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Full-screen mobile popup styles */
+.booking-popup {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8); /* Darker overlay for better coverage */
+    z-index: 1000;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.booking-popup-content {
+    position: relative;
+    background-color: white;
+    width: 100%; /* Full width on mobile */
+    max-width: 100%; /* Override previous max-width */
+    margin: 0; /* Remove margins */
+    padding: 25px 20px; /* Increase padding */
+    border-radius: 0; /* Remove border radius for full coverage */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-align: center;
+    box-sizing: border-box;
+    min-height: 100%; /* Ensure full height coverage */
+}
+
+/* Add media query for responsive behavior */
+@media (min-width: 768px) {
+    /* For tablets and desktop, restore some of the original styling */
+    .booking-popup-content {
+        width: 90%;
+        max-width: 500px; /* Larger max-width for better readability */
+        margin: 50px auto;
+        border-radius: 10px; /* Restore border radius */
+        min-height: auto; /* Allow natural height */
+    }
+}
+
+/* Improved close button positioning and styling */
+.close-popup {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above other content */
+}
+
+/* Enhance content spacing */
+.consultant-image {
+    width: 100px; /* Larger image */
+    height: 100px;
+    margin: 20px auto;
+}
+
+.booking-popup h2 {
+    margin: 20px 0 15px;
+    font-size: 24px;
+}
+
+.popup-subtitle {
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+/* Make buttons more prominent */
+.phone-button {
+    padding: 15px;
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+/* Adjust spacing for better mobile experience */
+.reasons-section {
+    margin-top: 25px;
+    padding: 20px;
+}
+</style>
+
+<script>
+// Popup functionality
+const callPopupButton = document.getElementById('callPopupButton');
+const bookingPopup = document.getElementById('bookingPopup');
+const closePopup = document.querySelector('.close-popup');
+
+// Show booking popup when call button is clicked
+callPopupButton.addEventListener('click', function() {
+    bookingPopup.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+});
+
+// Close booking popup when X is clicked
+closePopup.addEventListener('click', function() {
+    bookingPopup.style.display = 'none';
+    document.body.style.overflow = ''; // Restore scrolling
+});
+
+// Close booking popup when clicking outside the popup
+window.addEventListener('click', function(event) {
+    if (event.target == bookingPopup) {
+        bookingPopup.style.display = 'none';
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+});
+
+// Handle modal close with escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && bookingPopup.style.display === 'block') {
+        bookingPopup.style.display = 'none';
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+});
+
+// Show popup automatically after page load
+document.addEventListener('DOMContentLoaded', function() {
+    bookingPopup.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+});
+</script>
+</body>
 </html>
