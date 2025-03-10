@@ -1,0 +1,2646 @@
+<!DOCTYPE html>
+<html data-qb-installed="true">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style data-emotion="css-global" data-s="">
+      @-webkit-keyframes mui-auto-fill {
+        from {
+          display: block;
+        }
+      }
+      @keyframes mui-auto-fill {
+        from {
+          display: block;
+        }
+      }
+      @-webkit-keyframes mui-auto-fill-cancel {
+        from {
+          display: block;
+        }
+      }
+      @keyframes mui-auto-fill-cancel {
+        from {
+          display: block;
+        }
+      }
+    </style>
+    <style data-emotion="css-global" data-s="">
+      @-webkit-keyframes mui-auto-fill {
+        from {
+          display: block;
+        }
+      }
+      @keyframes mui-auto-fill {
+        from {
+          display: block;
+        }
+      }
+      @-webkit-keyframes mui-auto-fill-cancel {
+        from {
+          display: block;
+        }
+      }
+      @keyframes mui-auto-fill-cancel {
+        from {
+          display: block;
+        }
+      }
+    </style>
+    <meta name="viewport" content="width=device-width" />
+    <title>libroboleto.com</title>
+    <meta name="next-head-count" content="3" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      
+    />
+    <link
+      rel="preload"
+      href="./assets/1d9f62bce0d481b0.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/1d9f62bce0d481b0.css"
+      data-n-g=""
+    />
+
+ 
+    
+   
+    <style type="text/css">
+      .lf-progress {
+        -webkit-appearance: none;
+        -moz-apperance: none;
+        width: 100%;
+        /* margin: 0 10px; */
+        height: 4px;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      .lf-progress:focus {
+        outline: none;
+        border: none;
+      }
+      .lf-progress::-moz-range-track {
+        cursor: pointer;
+        background: none;
+        border: none;
+        outline: none;
+      }
+      .lf-progress::-webkit-slider-thumb {
+        -webkit-appearance: none !important;
+        height: 13px;
+        width: 13px;
+        border: 0;
+        border-radius: 50%;
+        background: #0fccce;
+        cursor: pointer;
+      }
+      .lf-progress::-moz-range-thumb {
+        -moz-appearance: none !important;
+        height: 13px;
+        width: 13px;
+        border: 0;
+        border-radius: 50%;
+        background: #0fccce;
+        cursor: pointer;
+      }
+      .lf-progress::-ms-track {
+        width: 100%;
+        height: 3px;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+      }
+      .lf-progress::-ms-fill-lower {
+        background: #ccc;
+        border-radius: 3px;
+      }
+      .lf-progress::-ms-fill-upper {
+        background: #ccc;
+        border-radius: 3px;
+      }
+      .lf-progress::-ms-thumb {
+        border: 0;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background: #0fccce;
+        cursor: pointer;
+      }
+      .lf-progress:focus::-ms-fill-lower {
+        background: #ccc;
+      }
+      .lf-progress:focus::-ms-fill-upper {
+        background: #ccc;
+      }
+      .lf-player-container :focus {
+        outline: 0;
+      }
+      .lf-popover {
+        position: relative;
+      }
+
+      .lf-popover-content {
+        display: inline-block;
+        position: absolute;
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0, -10px);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+        transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+      }
+
+      .lf-popover-content.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(0, 0px);
+      }
+
+      .lf-player-btn-container {
+        display: flex;
+        align-items: center;
+      }
+      .lf-player-btn {
+        cursor: pointer;
+        fill: #999;
+        width: 14px;
+      }
+
+      .lf-player-btn.active {
+        fill: #555;
+      }
+
+      .lf-popover {
+        position: relative;
+      }
+
+      .lf-popover-content {
+        display: inline-block;
+        position: absolute;
+        background-color: #ffffff;
+        opacity: 1;
+
+        transform: translate(0, -10px);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+        transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+        padding: 10px;
+      }
+
+      .lf-popover-content.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(0, 0px);
+      }
+
+      .lf-arrow {
+        position: absolute;
+        z-index: -1;
+        content: "";
+        bottom: -9px;
+        border-style: solid;
+        border-width: 10px 10px 0px 10px;
+      }
+
+      .lf-left-align,
+      .lf-left-align .lfarrow {
+        left: 0;
+        right: unset;
+      }
+
+      .lf-right-align,
+      .lf-right-align .lf-arrow {
+        right: 0;
+        left: unset;
+      }
+
+      .lf-text-input {
+        border: 1px #ccc solid;
+        border-radius: 5px;
+        padding: 3px;
+        width: 60px;
+        margin: 0;
+      }
+
+      .lf-color-picker {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 90px;
+      }
+
+      .lf-color-selectors {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .lf-color-component {
+        display: flex;
+        flex-direction: row;
+        font-size: 12px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .lf-color-component strong {
+        width: 40px;
+      }
+
+      .lf-color-component input[type="range"] {
+        margin: 0 0 0 10px;
+      }
+
+      .lf-color-component input[type="number"] {
+        width: 50px;
+        margin: 0 0 0 10px;
+      }
+
+      .lf-color-preview {
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 5px;
+      }
+
+      .lf-preview {
+        height: 60px;
+        width: 60px;
+      }
+
+      .lf-popover-snapshot {
+        width: 150px;
+      }
+      .lf-popover-snapshot h5 {
+        margin: 5px 0 10px 0;
+        font-size: 0.75rem;
+      }
+      .lf-popover-snapshot a {
+        display: block;
+        text-decoration: none;
+      }
+      .lf-popover-snapshot a:before {
+        content: "⥼";
+        margin-right: 5px;
+      }
+      .lf-popover-snapshot .lf-note {
+        display: block;
+        margin-top: 10px;
+        color: #999;
+      }
+      .lf-player-controls > div {
+        margin-right: 5px;
+        margin-left: 5px;
+      }
+      .lf-player-controls > div:first-child {
+        margin-left: 0px;
+      }
+      .lf-player-controls > div:last-child {
+        margin-right: 0px;
+      }
+    </style>
+    
+    
+    <style type="text/css">
+      @font-face {
+        font-weight: 400;
+        font-style: normal;
+        font-family: circular;
+
+        src: url("chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Book.woff2")
+          format("woff2");
+      }
+
+      @font-face {
+        font-weight: 700;
+        font-style: normal;
+        font-family: circular;
+
+        src: url("chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2")
+          format("woff2");
+      }
+    </style>
+    <style data-emotion="css sfyx9i" data-s="">
+      .css-sfyx9i {
+        text-align: center;
+        -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        font-size: 1.5rem;
+        padding: 8px;
+        border-radius: 50%;
+        overflow: visible;
+        color: rgba(0, 0, 0, 0.54);
+        -webkit-transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1)
+          0ms;
+        transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        margin-left: -12px;
+        color: inherit;
+      }
+      .css-sfyx9i:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+      }
+      @media (hover: none) {
+        .css-sfyx9i:hover {
+          background-color: transparent;
+        }
+      }
+      .css-sfyx9i.Mui-disabled {
+        background-color: transparent;
+        color: rgba(0, 0, 0, 0.26);
+      }
+    </style>
+    <style data-emotion="css 1a1y772" data-s="">
+      .css-1a1y772 {
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        position: relative;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+        background-color: transparent;
+        outline: 0;
+        border: 0;
+        margin: 0;
+        border-radius: 0;
+        padding: 0;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        vertical-align: middle;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -webkit-text-decoration: none;
+        text-decoration: none;
+        color: inherit;
+        text-align: center;
+        -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        font-size: 1.5rem;
+        padding: 8px;
+        border-radius: 50%;
+        overflow: visible;
+        color: rgba(0, 0, 0, 0.54);
+        -webkit-transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1)
+          0ms;
+        transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        margin-left: -12px;
+        color: inherit;
+      }
+      .css-1a1y772::-moz-focus-inner {
+        border-style: none;
+      }
+      .css-1a1y772.Mui-disabled {
+        pointer-events: none;
+        cursor: default;
+      }
+      @media print {
+        .css-1a1y772 {
+          -webkit-print-color-adjust: exact;
+          color-adjust: exact;
+        }
+      }
+      .css-1a1y772:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+      }
+      @media (hover: none) {
+        .css-1a1y772:hover {
+          background-color: transparent;
+        }
+      }
+      .css-1a1y772.Mui-disabled {
+        background-color: transparent;
+        color: rgba(0, 0, 0, 0.26);
+      }
+    </style>
+    <style data-emotion="css vubbuv" data-s="">
+      .css-vubbuv {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        width: 1em;
+        height: 1em;
+        display: inline-block;
+        fill: currentColor;
+        -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        font-size: 1.5rem;
+      }
+    </style>
+    <style data-emotion="css aeu6tq" data-s="">
+      .css-aeu6tq {
+        z-index: 1200;
+        z-index: 99999;
+      }
+    </style>
+    <style data-emotion="css cw1a0k" data-s="">
+      .css-cw1a0k .clearButton {
+        opacity: 1;
+      }
+      @media (pointer: fine) {
+        .css-cw1a0k .clearButton {
+          opacity: 0;
+        }
+        .css-cw1a0k:hover .clearButton,
+        .css-cw1a0k:focus-within .clearButton {
+          opacity: 1;
+        }
+      }
+    </style>
+    <style data-emotion="css 165mck1" data-s="">
+      .css-165mck1 {
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        position: relative;
+        min-width: 0;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        vertical-align: top;
+      }
+      .css-165mck1 .clearButton {
+        opacity: 1;
+      }
+      @media (pointer: fine) {
+        .css-165mck1 .clearButton {
+          opacity: 0;
+        }
+        .css-165mck1:hover .clearButton,
+        .css-165mck1:focus-within .clearButton {
+          opacity: 1;
+        }
+      }
+    </style>
+    <style data-emotion="css 1bn53lx" data-s="">
+      .css-1bn53lx {
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.4375em;
+        letter-spacing: 0.00938em;
+        color: rgba(0, 0, 0, 0.87);
+        box-sizing: border-box;
+        position: relative;
+        cursor: text;
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        position: relative;
+        border-radius: 4px;
+        padding-right: 14px;
+      }
+      .css-1bn53lx.Mui-disabled {
+        color: rgba(0, 0, 0, 0.38);
+        cursor: default;
+      }
+      .css-1bn53lx:hover .MuiOutlinedInput-notchedOutline {
+        border-color: rgba(0, 0, 0, 0.87);
+      }
+      @media (hover: none) {
+        .css-1bn53lx:hover .MuiOutlinedInput-notchedOutline {
+          border-color: rgba(0, 0, 0, 0.23);
+        }
+      }
+      .css-1bn53lx.Mui-focused .MuiOutlinedInput-notchedOutline {
+        border-color: #1976d2;
+        border-width: 2px;
+      }
+      .css-1bn53lx.Mui-error .MuiOutlinedInput-notchedOutline {
+        border-color: #d32f2f;
+      }
+      .css-1bn53lx.Mui-disabled .MuiOutlinedInput-notchedOutline {
+        border-color: rgba(0, 0, 0, 0.26);
+      }
+    </style>
+    <style data-emotion="css 1uvydh2" data-s="">
+      .css-1uvydh2 {
+        font: inherit;
+        letter-spacing: inherit;
+        color: currentColor;
+        padding: 4px 0 5px;
+        border: 0;
+        box-sizing: content-box;
+        background: none;
+        height: 1.4375em;
+        margin: 0;
+        -webkit-tap-highlight-color: transparent;
+        display: block;
+        min-width: 0;
+        width: 100%;
+        -webkit-animation-name: mui-auto-fill-cancel;
+        animation-name: mui-auto-fill-cancel;
+        -webkit-animation-duration: 10ms;
+        animation-duration: 10ms;
+        padding: 16.5px 14px;
+        padding-right: 0;
+      }
+      .css-1uvydh2::-webkit-input-placeholder {
+        color: currentColor;
+        opacity: 0.42;
+        -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      }
+      .css-1uvydh2::-moz-placeholder {
+        color: currentColor;
+        opacity: 0.42;
+        -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      }
+      .css-1uvydh2:-ms-input-placeholder {
+        color: currentColor;
+        opacity: 0.42;
+        -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      }
+      .css-1uvydh2::-ms-input-placeholder {
+        color: currentColor;
+        opacity: 0.42;
+        -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      }
+      .css-1uvydh2:focus {
+        outline: 0;
+      }
+      .css-1uvydh2:invalid {
+        box-shadow: none;
+      }
+      .css-1uvydh2::-webkit-search-decoration {
+        -webkit-appearance: none;
+      }
+      label[data-shrink="false"]
+        + .MuiInputBase-formControl
+        .css-1uvydh2::-webkit-input-placeholder {
+        opacity: 0 !important;
+      }
+      label[data-shrink="false"]
+        + .MuiInputBase-formControl
+        .css-1uvydh2::-moz-placeholder {
+        opacity: 0 !important;
+      }
+      label[data-shrink="false"]
+        + .MuiInputBase-formControl
+        .css-1uvydh2:-ms-input-placeholder {
+        opacity: 0 !important;
+      }
+      label[data-shrink="false"]
+        + .MuiInputBase-formControl
+        .css-1uvydh2::-ms-input-placeholder {
+        opacity: 0 !important;
+      }
+      label[data-shrink="false"]
+        + .MuiInputBase-formControl
+        .css-1uvydh2:focus::-webkit-input-placeholder {
+        opacity: 0.42;
+      }
+      label[data-shrink="false"]
+        + .MuiInputBase-formControl
+        .css-1uvydh2:focus::-moz-placeholder {
+        opacity: 0.42;
+      }
+      label[data-shrink="false"]
+        + .MuiInputBase-formControl
+        .css-1uvydh2:focus:-ms-input-placeholder {
+        opacity: 0.42;
+      }
+      label[data-shrink="false"]
+        + .MuiInputBase-formControl
+        .css-1uvydh2:focus::-ms-input-placeholder {
+        opacity: 0.42;
+      }
+      .css-1uvydh2.Mui-disabled {
+        opacity: 1;
+        -webkit-text-fill-color: rgba(0, 0, 0, 0.38);
+      }
+      .css-1uvydh2:-webkit-autofill {
+        -webkit-animation-duration: 5000s;
+        animation-duration: 5000s;
+        -webkit-animation-name: mui-auto-fill;
+        animation-name: mui-auto-fill;
+      }
+      .css-1uvydh2:-webkit-autofill {
+        border-radius: inherit;
+      }
+    </style>
+    <style data-emotion="css 1nvf7g0" data-s="">
+      .css-1nvf7g0 {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        height: 0.01em;
+        max-height: 2em;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        white-space: nowrap;
+        color: rgba(0, 0, 0, 0.54);
+        margin-left: 8px;
+      }
+    </style>
+    <style data-emotion="css 1i2cjo2" data-s="">
+      .css-1i2cjo2 {
+        text-align: center;
+        -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        font-size: 1.5rem;
+        padding: 8px;
+        border-radius: 50%;
+        overflow: visible;
+        color: rgba(0, 0, 0, 0.54);
+        -webkit-transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1)
+          0ms;
+        transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        margin-right: -12px;
+      }
+      .css-1i2cjo2:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+      }
+      @media (hover: none) {
+        .css-1i2cjo2:hover {
+          background-color: transparent;
+        }
+      }
+      .css-1i2cjo2.Mui-disabled {
+        background-color: transparent;
+        color: rgba(0, 0, 0, 0.26);
+      }
+    </style>
+    <style data-emotion="css slyssw" data-s="">
+      .css-slyssw {
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        position: relative;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+        background-color: transparent;
+        outline: 0;
+        border: 0;
+        margin: 0;
+        border-radius: 0;
+        padding: 0;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        vertical-align: middle;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -webkit-text-decoration: none;
+        text-decoration: none;
+        color: inherit;
+        text-align: center;
+        -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        font-size: 1.5rem;
+        padding: 8px;
+        border-radius: 50%;
+        overflow: visible;
+        color: rgba(0, 0, 0, 0.54);
+        -webkit-transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1)
+          0ms;
+        transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        margin-right: -12px;
+      }
+      .css-slyssw::-moz-focus-inner {
+        border-style: none;
+      }
+      .css-slyssw.Mui-disabled {
+        pointer-events: none;
+        cursor: default;
+      }
+      @media print {
+        .css-slyssw {
+          -webkit-print-color-adjust: exact;
+          color-adjust: exact;
+        }
+      }
+      .css-slyssw:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+      }
+      @media (hover: none) {
+        .css-slyssw:hover {
+          background-color: transparent;
+        }
+      }
+      .css-slyssw.Mui-disabled {
+        background-color: transparent;
+        color: rgba(0, 0, 0, 0.26);
+      }
+    </style>
+    <style data-emotion="css vubbuv" data-s="">
+      .css-vubbuv {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        width: 1em;
+        height: 1em;
+        display: inline-block;
+        fill: currentColor;
+        -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        font-size: 1.5rem;
+      }
+    </style>
+    <style data-emotion="css 19w1uun" data-s="">
+      .css-19w1uun {
+        border-color: rgba(0, 0, 0, 0.23);
+      }
+    </style>
+    <style data-emotion="css igs3ac" data-s="">
+      .css-igs3ac {
+        text-align: left;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        top: -5px;
+        left: 0;
+        margin: 0;
+        padding: 0 8px;
+        pointer-events: none;
+        border-radius: inherit;
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+        min-width: 0%;
+        border-color: rgba(0, 0, 0, 0.23);
+      }
+    </style>
+    <style data-emotion="css ihdtdm" data-s="">
+      .css-ihdtdm {
+        float: unset;
+        width: auto;
+        overflow: hidden;
+        padding: 0;
+        line-height: 11px;
+        -webkit-transition: width 150ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+        transition: width 150ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+      }
+    </style>
+    <style data-emotion="css 1ozefeb" data-s="">
+      .css-1ozefeb {
+        z-index: 1300;
+      }
+    </style>
+    <style data-emotion="css 1mtsuo7" data-s="">
+      .css-1mtsuo7 {
+        z-index: 1300;
+      }
+    </style>
+    <style data-emotion="css cw1a0k" data-s="">
+      .css-cw1a0k .clearButton {
+        opacity: 1;
+      }
+      @media (pointer: fine) {
+        .css-cw1a0k .clearButton {
+          opacity: 0;
+        }
+        .css-cw1a0k:hover .clearButton,
+        .css-cw1a0k:focus-within .clearButton {
+          opacity: 1;
+        }
+      }
+    </style>
+    <style data-emotion="css 165mck1" data-s="">
+      .css-165mck1 {
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        position: relative;
+        min-width: 0;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        vertical-align: top;
+      }
+      .css-165mck1 .clearButton {
+        opacity: 1;
+      }
+      @media (pointer: fine) {
+        .css-165mck1 .clearButton {
+          opacity: 0;
+        }
+        .css-165mck1:hover .clearButton,
+        .css-165mck1:focus-within .clearButton {
+          opacity: 1;
+        }
+      }
+    </style>
+    <style data-emotion="css 1bn53lx" data-s="">
+      .css-1bn53lx {
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.4375em;
+        letter-spacing: 0.00938em;
+        color: rgba(0, 0, 0, 0.87);
+        box-sizing: border-box;
+        position: relative;
+        cursor: text;
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        position: relative;
+        border-radius: 4px;
+        padding-right: 14px;
+      }
+      .css-1bn53lx.Mui-disabled {
+        color: rgba(0, 0, 0, 0.38);
+        cursor: default;
+      }
+      .css-1bn53lx:hover .MuiOutlinedInput-notchedOutline {
+        border-color: rgba(0, 0, 0, 0.87);
+      }
+      @media (hover: none) {
+        .css-1bn53lx:hover .MuiOutlinedInput-notchedOutline {
+          border-color: rgba(0, 0, 0, 0.23);
+        }
+      }
+      .css-1bn53lx.Mui-focused .MuiOutlinedInput-notchedOutline {
+        border-color: #1976d2;
+        border-width: 2px;
+      }
+      .css-1bn53lx.Mui-error .MuiOutlinedInput-notchedOutline {
+        border-color: #d32f2f;
+      }
+      .css-1bn53lx.Mui-disabled .MuiOutlinedInput-notchedOutline {
+        border-color: rgba(0, 0, 0, 0.26);
+      }
+    </style>
+    <style data-emotion="css 1uvydh2" data-s="">
+      .css-1uvydh2 {
+        font: inherit;
+        letter-spacing: inherit;
+        color: currentColor;
+        padding: 4px 0 5px;
+        border: 0;
+        box-sizing: content-box;
+        background: none;
+        height: 1.4375em;
+        margin: 0;
+        -webkit-tap-highlight-color: transparent;
+        display: block;
+        min-width: 0;
+        width: 100%;
+        -webkit-animation-name: mui-auto-fill-cancel;
+        animation-name: mui-auto-fill-cancel;
+        -webkit-animation-duration: 10ms;
+        animation-duration: 10ms;
+        padding: 16.5px 14px;
+        padding-right: 0;
+      }
+      .css-1uvydh2::-webkit-input-placeholder {
+        color: currentColor;
+        opacity: 0.42;
+        -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      }
+      .css-1uvydh2::-moz-placeholder {
+        color: currentColor;
+        opacity: 0.42;
+        -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      }
+      .css-1uvydh2:-ms-input-placeholder {
+        color: currentColor;
+        opacity: 0.42;
+        -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      }
+      .css-1uvydh2::-ms-input-placeholder {
+        color: currentColor;
+        opacity: 0.42;
+        -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      }
+      .css-1uvydh2:focus {
+        outline: 0;
+      }
+      .css-1uvydh2:invalid {
+        box-shadow: none;
+      }
+      .css-1uvydh2::-webkit-search-decoration {
+        -webkit-appearance: none;
+      }
+      label[data-shrink="false"]
+        + .MuiInputBase-formControl
+        .css-1uvydh2::-webkit-input-placeholder {
+        opacity: 0 !important;
+      }
+      label[data-shrink="false"]
+        + .MuiInputBase-formControl
+        .css-1uvydh2::-moz-placeholder {
+        opacity: 0 !important;
+      }
+      label[data-shrink="false"]
+        + .MuiInputBase-formControl
+        .css-1uvydh2:-ms-input-placeholder {
+        opacity: 0 !important;
+      }
+      label[data-shrink="false"]
+        + .MuiInputBase-formControl
+        .css-1uvydh2::-ms-input-placeholder {
+        opacity: 0 !important;
+      }
+      label[data-shrink="false"]
+        + .MuiInputBase-formControl
+        .css-1uvydh2:focus::-webkit-input-placeholder {
+        opacity: 0.42;
+      }
+      label[data-shrink="false"]
+        + .MuiInputBase-formControl
+        .css-1uvydh2:focus::-moz-placeholder {
+        opacity: 0.42;
+      }
+      label[data-shrink="false"]
+        + .MuiInputBase-formControl
+        .css-1uvydh2:focus:-ms-input-placeholder {
+        opacity: 0.42;
+      }
+      label[data-shrink="false"]
+        + .MuiInputBase-formControl
+        .css-1uvydh2:focus::-ms-input-placeholder {
+        opacity: 0.42;
+      }
+      .css-1uvydh2.Mui-disabled {
+        opacity: 1;
+        -webkit-text-fill-color: rgba(0, 0, 0, 0.38);
+      }
+      .css-1uvydh2:-webkit-autofill {
+        -webkit-animation-duration: 5000s;
+        animation-duration: 5000s;
+        -webkit-animation-name: mui-auto-fill;
+        animation-name: mui-auto-fill;
+      }
+      .css-1uvydh2:-webkit-autofill {
+        border-radius: inherit;
+      }
+    </style>
+    <style data-emotion="css 1nvf7g0" data-s="">
+      .css-1nvf7g0 {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        height: 0.01em;
+        max-height: 2em;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        white-space: nowrap;
+        color: rgba(0, 0, 0, 0.54);
+        margin-left: 8px;
+      }
+    </style>
+    <style data-emotion="css 1i2cjo2" data-s="">
+      .css-1i2cjo2 {
+        text-align: center;
+        -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        font-size: 1.5rem;
+        padding: 8px;
+        border-radius: 50%;
+        overflow: visible;
+        color: rgba(0, 0, 0, 0.54);
+        -webkit-transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1)
+          0ms;
+        transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        margin-right: -12px;
+      }
+      .css-1i2cjo2:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+      }
+      @media (hover: none) {
+        .css-1i2cjo2:hover {
+          background-color: transparent;
+        }
+      }
+      .css-1i2cjo2.Mui-disabled {
+        background-color: transparent;
+        color: rgba(0, 0, 0, 0.26);
+      }
+    </style>
+    <style data-emotion="css slyssw" data-s="">
+      .css-slyssw {
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        position: relative;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+        background-color: transparent;
+        outline: 0;
+        border: 0;
+        margin: 0;
+        border-radius: 0;
+        padding: 0;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        vertical-align: middle;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -webkit-text-decoration: none;
+        text-decoration: none;
+        color: inherit;
+        text-align: center;
+        -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        font-size: 1.5rem;
+        padding: 8px;
+        border-radius: 50%;
+        overflow: visible;
+        color: rgba(0, 0, 0, 0.54);
+        -webkit-transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1)
+          0ms;
+        transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        margin-right: -12px;
+      }
+      .css-slyssw::-moz-focus-inner {
+        border-style: none;
+      }
+      .css-slyssw.Mui-disabled {
+        pointer-events: none;
+        cursor: default;
+      }
+      @media print {
+        .css-slyssw {
+          -webkit-print-color-adjust: exact;
+          color-adjust: exact;
+        }
+      }
+      .css-slyssw:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+      }
+      @media (hover: none) {
+        .css-slyssw:hover {
+          background-color: transparent;
+        }
+      }
+      .css-slyssw.Mui-disabled {
+        background-color: transparent;
+        color: rgba(0, 0, 0, 0.26);
+      }
+    </style>
+    <style data-emotion="css vubbuv" data-s="">
+      .css-vubbuv {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        width: 1em;
+        height: 1em;
+        display: inline-block;
+        fill: currentColor;
+        -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        font-size: 1.5rem;
+      }
+    </style>
+    <style data-emotion="css 19w1uun" data-s="">
+      .css-19w1uun {
+        border-color: rgba(0, 0, 0, 0.23);
+      }
+    </style>
+    <style data-emotion="css igs3ac" data-s="">
+      .css-igs3ac {
+        text-align: left;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        top: -5px;
+        left: 0;
+        margin: 0;
+        padding: 0 8px;
+        pointer-events: none;
+        border-radius: inherit;
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+        min-width: 0%;
+        border-color: rgba(0, 0, 0, 0.23);
+      }
+    </style>
+    <style data-emotion="css ihdtdm" data-s="">
+      .css-ihdtdm {
+        float: unset;
+        width: auto;
+        overflow: hidden;
+        padding: 0;
+        line-height: 11px;
+        -webkit-transition: width 150ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+        transition: width 150ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+      }
+    </style>
+    <style data-emotion="css 1ozefeb" data-s="">
+      .css-1ozefeb {
+        z-index: 1300;
+      }
+    </style>
+    <style data-emotion="css 1mtsuo7" data-s="">
+      .css-1mtsuo7 {
+        z-index: 1300;
+      }
+    </style>
+    <style type="text/css">
+      .lf-progress {
+        -webkit-appearance: none;
+        -moz-apperance: none;
+        width: 100%;
+        /* margin: 0 10px; */
+        height: 4px;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      .lf-progress:focus {
+        outline: none;
+        border: none;
+      }
+      .lf-progress::-moz-range-track {
+        cursor: pointer;
+        background: none;
+        border: none;
+        outline: none;
+      }
+      .lf-progress::-webkit-slider-thumb {
+        -webkit-appearance: none !important;
+        height: 13px;
+        width: 13px;
+        border: 0;
+        border-radius: 50%;
+        background: #0fccce;
+        cursor: pointer;
+      }
+      .lf-progress::-moz-range-thumb {
+        -moz-appearance: none !important;
+        height: 13px;
+        width: 13px;
+        border: 0;
+        border-radius: 50%;
+        background: #0fccce;
+        cursor: pointer;
+      }
+      .lf-progress::-ms-track {
+        width: 100%;
+        height: 3px;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+      }
+      .lf-progress::-ms-fill-lower {
+        background: #ccc;
+        border-radius: 3px;
+      }
+      .lf-progress::-ms-fill-upper {
+        background: #ccc;
+        border-radius: 3px;
+      }
+      .lf-progress::-ms-thumb {
+        border: 0;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background: #0fccce;
+        cursor: pointer;
+      }
+      .lf-progress:focus::-ms-fill-lower {
+        background: #ccc;
+      }
+      .lf-progress:focus::-ms-fill-upper {
+        background: #ccc;
+      }
+      .lf-player-container :focus {
+        outline: 0;
+      }
+      .lf-popover {
+        position: relative;
+      }
+
+      .lf-popover-content {
+        display: inline-block;
+        position: absolute;
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0, -10px);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+        transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+      }
+
+      .lf-popover-content.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(0, 0px);
+      }
+
+      .lf-player-btn-container {
+        display: flex;
+        align-items: center;
+      }
+      .lf-player-btn {
+        cursor: pointer;
+        fill: #999;
+        width: 14px;
+      }
+
+      .lf-player-btn.active {
+        fill: #555;
+      }
+
+      .lf-popover {
+        position: relative;
+      }
+
+      .lf-popover-content {
+        display: inline-block;
+        position: absolute;
+        background-color: #ffffff;
+        opacity: 1;
+
+        transform: translate(0, -10px);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+        transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+        padding: 10px;
+      }
+
+      .lf-popover-content.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(0, 0px);
+      }
+
+      .lf-arrow {
+        position: absolute;
+        z-index: -1;
+        content: "";
+        bottom: -9px;
+        border-style: solid;
+        border-width: 10px 10px 0px 10px;
+      }
+
+      .lf-left-align,
+      .lf-left-align .lfarrow {
+        left: 0;
+        right: unset;
+      }
+
+      .lf-right-align,
+      .lf-right-align .lf-arrow {
+        right: 0;
+        left: unset;
+      }
+
+      .lf-text-input {
+        border: 1px #ccc solid;
+        border-radius: 5px;
+        padding: 3px;
+        width: 60px;
+        margin: 0;
+      }
+
+      .lf-color-picker {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 90px;
+      }
+
+      .lf-color-selectors {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .lf-color-component {
+        display: flex;
+        flex-direction: row;
+        font-size: 12px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .lf-color-component strong {
+        width: 40px;
+      }
+
+      .lf-color-component input[type="range"] {
+        margin: 0 0 0 10px;
+      }
+
+      .lf-color-component input[type="number"] {
+        width: 50px;
+        margin: 0 0 0 10px;
+      }
+
+      .lf-color-preview {
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 5px;
+      }
+
+      .lf-preview {
+        height: 60px;
+        width: 60px;
+      }
+
+      .lf-popover-snapshot {
+        width: 150px;
+      }
+      .lf-popover-snapshot h5 {
+        margin: 5px 0 10px 0;
+        font-size: 0.75rem;
+      }
+      .lf-popover-snapshot a {
+        display: block;
+        text-decoration: none;
+      }
+      .lf-popover-snapshot a:before {
+        content: "⥼";
+        margin-right: 5px;
+      }
+      .lf-popover-snapshot .lf-note {
+        display: block;
+        margin-top: 10px;
+        color: #999;
+      }
+      .lf-player-controls > div {
+        margin-right: 5px;
+        margin-left: 5px;
+      }
+      .lf-player-controls > div:first-child {
+        margin-left: 0px;
+      }
+      .lf-player-controls > div:last-child {
+        margin-right: 0px;
+      }
+    </style>
+ 
+    
+   
+  </head>
+  <body data-new-gr-c-s-check-loaded="14.1213.0" data-gr-ext-installed="">
+    <div id="__next">
+      <div style="display: none">
+        <div class="mob_section">
+          <div class="air_spacial_phone_view">
+            <a href="tel:+1(844) 565-0226"
+              ><div class="air_spacial_main">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="air_logo_area">
+                        <h4>
+                          <img
+                            alt=""
+                            loading="lazy"
+                            width="50"
+                            height="50"
+                            decoding="async"
+                            data-nimg="1"
+                            style="
+                              color: transparent;
+                              width: 100%;
+                              height: auto;
+                            "
+                            sizes="100vw"
+                           
+                            src="./assets/logo.webp"
+                          />
+                        </h4>
+                        <h5>Airline Reservations!!</h5>
+                        <h6>Un-Published Fares</h6>
+                      </div>
+                      <div class="air_spacial_middle">
+                        <h4>Saved For Our Callers</h4>
+                        <span class="air_spacial_middle3"><h5></h5></span>
+                        <h6></h6>
+                        <h6>Reservations</h6>
+                      </div>
+                      <div class="air_spacial_middle2">
+                        <p>
+                          New Reservations, Changes, Cancellations &
+                          Customer Service
+                        </p>
+                        <h4>No Hold Time</h4>
+                        <h5><i class="fa-solid fa-phone"></i> Call Now</h5>
+                        <h6>Agent Available</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="air_spacial_fix_bottom">
+                  <h4>
+                    <i class="fa-solid fa-phone"></i>
+                    <!-- -->+1(844) 565-0226<!-- -->
+                  </h4>
+                </div>
+              </div></a
+            >
+          </div>
+        </div>
+      </div>
+      <header style="display: block">
+        <nav
+          class="navbar navbar-expand-lg navbar-light bg-white"
+          aria-label="Eleventh navbar example"
+        >
+          <div class="container">
+            <a class="navbar-brand" href="https://www.libroboleto.com/"
+              ><img
+                alt="Logo"
+                imagesizes="32"
+                loading="lazy"
+                width="200"
+                height="55"
+                decoding="async"
+                data-nimg="1"
+                class="img-fluid"
+                style="color: transparent"
+                src="./assets/logo.png"
+            /></a>
+            <div
+              class="collapse navbar-collapse flex-grow-1 text-right"
+              id="navbarsExample09"
+            >
+              <ul class="navbar-nav ms-auto flex-nowrap">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="https://www.libroboleto.com/"
+                    ><i class="fa-solid fa-house font_icon"></i> Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link false"
+                    href="https://www.libroboleto.com/about-us"
+                    ><i class="fa-solid fa-suitcase font_icon"></i> About Us</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link false"
+                    href="https://www.libroboleto.com/privacy-policy"
+                    ><i class="fa-solid fa-shield-halved font_icon"></i> Privacy
+                    Policy</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link false"
+                    href="https://www.libroboleto.com/contact-us"
+                    ><i class="fa-solid fa-address-book font_icon"></i> Contact
+                    Us</a
+                  >
+                </li>
+              </ul>
+              <div class="pull-right phone-number d-lg-block">
+                <ul>
+                  <li>
+                    <h5 class="m-0 p-0">
+                      <a href="tel:+1(844) 565-0226">+1(844) 565-0226</a>
+                    </h5>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div class="pupupnone">
+        <div class="modal fade show" aria-modal="true" style="display: none">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <a href="tel:+1(844) 565-0226"
+                ><button type="button" class="close" data-dismiss="modal">
+                  X
+                </button></a
+              >
+              <div class="modal-body class-modal">
+                <div class="pop-up-new-sec">
+                  <section class="banner-view2">
+                    <a href="tel:+1(844) 565-0226"
+                      ><div class="container">
+                        <div class="col-md-4 bg_dark_box pop-up-content-box">
+                          <div class="text1">CALL FOR</div>
+                          <ul class="list-view-items">
+                            <li>
+                              Tickets<br />
+                              Booking
+                            </li>
+                            <li>Manage <br />Booking</li>
+                            <li>Cancellation</li>
+                            <li>Customer <br />Service</li>
+                          </ul>
+                          <img
+                            alt="calling-cus"
+                            loading="lazy"
+                            width="50"
+                            height="50"
+                            decoding="async"
+                            data-nimg="1"
+                            class="calling-cus-img"
+                            style="color: transparent"
+                          
+                            src="./assets/popup-img.png"
+                          />
+                          <div class="exbt_cl">
+                            <h5>
+                              <i class="fa-solid fa-phone-volume"></i
+                              ><span> Phone Only Offers </span>+1(844) 565-0226
+                            </h5>
+                            <h3>Call Answer in Seconds</h3>
+                          </div>
+                        </div>
+                      </div></a
+                    >
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="container-fluid banner-bg"
+        style="background-image: url(assets/vouelosbaratos-img.jpg)"
+      >
+        <div class="container searh-engain">
+          <div class="row">
+            <div class="col-12 col-sm-12 col-lg-6 col-xl-6">
+              <div class="marg-top">
+                <h1>Book Your Perfect Escape with us</h1>
+                <p>
+                  Take a little break from the work strss of everyday. Discover
+                  plan trip and explore beautiful destinations.
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-12 col-lg-6 col-xl-6 p-0">
+              <div class="tab-content" style="display: block">
+                <div
+                  class="tab-pane fade show active"
+                  role="tabpanel"
+                  aria-labelledby="home-tab"
+                >
+                  <div class="form-check form-check-inline mb-3">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="tripType"
+                      checked=""
+                      value="roundTrip"
+                    /><label class="form-check-label" for="roundTrip"
+                      >Round Trip</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="tripType"
+                      value="oneWay"
+                    /><label class="form-check-label" for="oneWay"
+                      >One Way</label
+                    >
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-lg-12 col-xl-12 p-1">
+                      <label>From Airport</label>
+                      <div class="input-group">
+                        <div class="icon3">
+                          <img
+                            class=""
+                            id=""
+                            alt=""
+                            src="./assets/location.png"
+                          />
+                        </div>
+                        <input
+                          class="form-control"
+                          type="text"
+                          placeholder="Flying From"
+                          style="border-radius: 5px"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-lg-12 col-xl-12 p-1">
+                      <label>To Airport</label>
+                      <div class="input-group">
+                        <div class="icon3">
+                          <img
+                            class=""
+                            id=""
+                            alt=""
+                            src="./assets/plane_down.png"
+                          />
+                        </div>
+                        <input
+                          class="form-control"
+                          type="text"
+                          placeholder="Flying To"
+                          style="border-radius: 5px"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-lg-12 col-xl-12 p-1">
+                      <label>Departure Date</label>
+                      <div class="input-group">
+                        <div class="icon3">
+                          <img
+                            class=""
+                            id=""
+                            alt=""
+                            src="./assets/dateoick.png"
+                          />
+                        </div>
+                        <div
+                          class="MuiFormControl-root MuiTextField-root css-165mck1"
+                        >
+                          <div
+                            class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error MuiInputBase-formControl MuiInputBase-adornedEnd css-1bn53lx"
+                          >
+                            <input
+                              aria-invalid="true"
+                              autocomplete="off"
+                              id=":R2je9m:"
+                              placeholder="MM/DD/YYYY"
+                              type="text"
+                              inputmode="text"
+                              class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-1uvydh2"
+                              value="MM/DD/YYYY"
+                            />
+                            <div
+                              class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1nvf7g0"
+                            >
+                              <button
+                                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-slyssw"
+                                tabindex="0"
+                                type="button"
+                                aria-label="Choose date"
+                              >
+                                <svg
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
+                                  focusable="false"
+                                  aria-hidden="true"
+                                  viewBox="0 0 24 24"
+                                  data-testid="CalendarIcon"
+                                >
+                                  <path
+                                    d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
+                                  ></path></svg
+                                ><span
+                                  class="MuiTouchRipple-root css-w0pj6f"
+                                ></span>
+                              </button>
+                            </div>
+                            <fieldset
+                              aria-hidden="true"
+                              class="MuiOutlinedInput-notchedOutline css-igs3ac"
+                            >
+                              <legend class="css-ihdtdm">
+                                <span class="notranslate">​</span>
+                              </legend>
+                            </fieldset>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-lg-12 col-xl-12 p-1">
+                      <label>Return Date</label>
+                      <div class="input-group">
+                        <div class="icon3">
+                          <img
+                            class=""
+                            id=""
+                            alt=""
+                            src="./assets/dateoick.png"
+                          />
+                        </div>
+                        <div
+                          class="MuiFormControl-root MuiTextField-root css-165mck1"
+                        >
+                          <div
+                            class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error MuiInputBase-formControl MuiInputBase-adornedEnd css-1bn53lx"
+                          >
+                            <input
+                              aria-invalid="true"
+                              autocomplete="off"
+                              id=":R2ke9m:"
+                              placeholder="MM/DD/YYYY"
+                              type="text"
+                              inputmode="text"
+                              class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-1uvydh2"
+                              value="MM/DD/YYYY"
+                            />
+                            <div
+                              class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1nvf7g0"
+                            >
+                              <button
+                                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-slyssw"
+                                tabindex="0"
+                                type="button"
+                                aria-label="Choose date"
+                              >
+                                <svg
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
+                                  focusable="false"
+                                  aria-hidden="true"
+                                  viewBox="0 0 24 24"
+                                  data-testid="CalendarIcon"
+                                >
+                                  <path
+                                    d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
+                                  ></path></svg
+                                ><span
+                                  class="MuiTouchRipple-root css-w0pj6f"
+                                ></span>
+                              </button>
+                            </div>
+                            <fieldset
+                              aria-hidden="true"
+                              class="MuiOutlinedInput-notchedOutline css-igs3ac"
+                            >
+                              <legend class="css-ihdtdm">
+                                <span class="notranslate">​</span>
+                              </legend>
+                            </fieldset>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-lg-12 col-xl-12 p-1">
+                      <label>Add Travelers</label>
+                      <div class="dropdown">
+                        <div class="icon3">
+                          <img
+                            class=""
+                            id=""
+                            alt=""
+                            src="./assets/passenger_iim.png"
+                          />
+                        </div>
+                        <div class="class-selection-container">
+                          <div class="input-group">
+                            <input
+                              type="text"
+                              readonly=""
+                              class="form-control"
+                              style="border-radius: 5px"
+                              value="Economy - Adults: 1 - Children: 0"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="col-12 col-sm-12 col-lg-12 col-xl-12 d-grid gap-2 p-1"
+                    >
+                      <button class="btn btn-primary" type="button">
+                        Search Flights
+                      </button>
+                    </div>
+                  </div>
+                  <div class="text-danger">
+                    Kindly complete all the required fields.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-xl why-choose-section">
+        <div class="row explore-main mt-5">
+          <div class="col-12 col-sm-3 mb-2 htlwhy">
+            <div class="hotel whychoosebox">
+              <img
+                alt=""
+                loading="lazy"
+                width="50"
+                height="50"
+                decoding="async"
+                data-nimg="1"
+                class="card-LazyImage"
+                style="color: transparent; width: 100%; height: auto"
+                sizes="100vw"
+           
+                src="./assets/1.png"
+              /><span class="hotelbg"
+                ><p>
+                  <strong>User-Friendly Platform :</strong> Our intuitive
+                  website and mobile app make booking your travel arrangements
+                  effortless.
+                </p></span
+              >
+            </div>
+          </div>
+          <div class="col-12 col-sm-3 mb-2 htlwhy">
+            <div class="hotel whychoosebox">
+              <img
+                alt=""
+                loading="lazy"
+                width="50"
+                height="50"
+                decoding="async"
+                data-nimg="1"
+                class="card-LazyImage"
+                style="color: transparent; width: 100%; height: auto"
+                sizes="100vw"
+               
+                src="./assets/2.png"
+              /><span class="hotelbg"
+                ><p>
+                  <strong>Competitive Pricing :</strong> Enjoy competitive
+                  prices and exclusive deals on flights, hotels, and packages.
+                </p></span
+              >
+            </div>
+          </div>
+          <div class="col-12 col-sm-3 mb-2 htlwhy">
+            <div class="hotel whychoosebox">
+              <img
+                alt=""
+                loading="lazy"
+                width="50"
+                height="50"
+                decoding="async"
+                data-nimg="1"
+                class="card-LazyImage"
+                style="color: transparent; width: 100%; height: auto"
+                sizes="100vw"
+             
+                src="./assets/4.png"
+              /><span class="hotelbg"
+                ><p>
+                  <strong>24/7 Customer Support :</strong> Our dedicated
+                  customer support team is available round-the-clock to assist
+                  you at every step of your journey.
+                </p></span
+              >
+            </div>
+          </div>
+          <div class="col-12 col-sm-3 mb-2 htlwhy">
+            <div class="hotel whychoosebox">
+              <img
+                alt=""
+                loading="lazy"
+                width="50"
+                height="50"
+                decoding="async"
+                data-nimg="1"
+                class="card-LazyImage"
+                style="color: transparent; width: 100%; height: auto"
+                sizes="100vw"
+              
+                src="./assets/3.png"
+              /><span class="hotelbg"
+                ><p>
+                  <strong>Secure Booking :</strong> Rest assured knowing your
+                  transactions are safe and secure with our trusted payment.
+                </p></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hotelmain packagesection popular-tour">
+        <div class="container">
+          <div class="row explore-main">
+            <div class="col-sm-12 text-center">
+              <h2>Explore Popular Destination</h2>
+            </div>
+            <div class="col-12 col-sm-3">
+              <div class="pakageWrapperBox">
+                <div class="hotel">
+                  <img
+                    alt=""
+                    loading="lazy"
+                    width="50"
+                    height="50"
+                    decoding="async"
+                    data-nimg="1"
+                    class="card-LazyImage"
+                    style="color: transparent; width: 100%; height: auto"
+                    sizes="100vw"
+                   
+                    src="./assets/c-7.jpg"
+                  />
+                </div>
+                <span class="hotelbg"
+                  ><h3>
+                    <a href="https://www.libroboleto.com/#">Las Vegas</a>
+                  </h3>
+                  <p>10 Destinations | 5 Hotels</p></span
+                >
+              </div>
+            </div>
+            <div class="col-12 col-sm-3">
+              <div class="pakageWrapperBox">
+                <div class="hotel">
+                  <img
+                    alt=""
+                    loading="lazy"
+                    width="50"
+                    height="50"
+                    decoding="async"
+                    data-nimg="1"
+                    class="card-LazyImage"
+                    style="color: transparent; width: 100%; height: auto"
+                    sizes="100vw"
+                 
+                    src="./assets/c-2.jpg"
+                  />
+                </div>
+                <span class="hotelbg"
+                  ><h3><a href="https://www.libroboleto.com/#">Houston</a></h3>
+                  <p>10 Destinations | 5 Hotels</p></span
+                >
+              </div>
+            </div>
+            <div class="col-12 col-sm-3">
+              <div class="pakageWrapperBox">
+                <div class="hotel">
+                  <img
+                    alt=""
+                    loading="lazy"
+                    width="50"
+                    height="50"
+                    decoding="async"
+                    data-nimg="1"
+                    class="card-LazyImage"
+                    style="color: transparent; width: 100%; height: auto"
+                    sizes="100vw"
+                 
+                    src="./assets/c-3.jpg"
+                  />
+                </div>
+                <span class="hotelbg"
+                  ><h3>
+                    <a href="https://www.libroboleto.com/#">San Francisco</a>
+                  </h3>
+                  <p>10 Destinations | 5 Hotels</p></span
+                >
+              </div>
+            </div>
+            <div class="col-12 col-sm-3">
+              <div class="pakageWrapperBox">
+                <div class="hotel">
+                  <img
+                    alt=""
+                    loading="lazy"
+                    width="50"
+                    height="50"
+                    decoding="async"
+                    data-nimg="1"
+                    class="card-LazyImage"
+                    style="color: transparent; width: 100%; height: auto"
+                    sizes="100vw"
+                 
+                    src="./assets/c-4.webp"
+                  />
+                </div>
+                <span class="hotelbg"
+                  ><h3>
+                    <a href="https://www.libroboleto.com/#">Nashville</a>
+                  </h3>
+                  <p>10 Destinations | 5 Hotels</p></span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hotelmain packagesection popular-routes">
+        <div class="container">
+          <div class="row explore-main">
+            <div class="col-sm-12 text-center">
+              <h2>Explore Popular Routes</h2>
+            </div>
+            <div class="col-12 col-sm-3">
+              <div class="pakageWrapperBox">
+                <div class="hotel">
+                  <img
+                    alt=""
+                    loading="lazy"
+                    width="50"
+                    height="50"
+                    decoding="async"
+                    data-nimg="1"
+                    class="card-LazyImage"
+                    style="color: transparent; width: 100%; height: auto"
+                    sizes="100vw"
+                  
+                    src="./assets/desti1.webp"
+                  />
+                </div>
+                <span class="hotelbg"
+                  ><h3>
+                    <a href="https://www.libroboleto.com/#"
+                      ><span>Los Angeles</span
+                      ><span
+                        ><svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17.4 7H4C3.4 7 3 7.4 3 8C3 8.6 3.4 9 4 9H17.4V7ZM6.60001 15H20C20.6 15 21 15.4 21 16C21 16.6 20.6 17 20 17H6.60001V15Z"
+                            fill="currentColor"
+                          ></path>
+                          <path
+                            opacity="0.3"
+                            d="M17.4 3V13L21.7 8.70001C22.1 8.30001 22.1 7.69999 21.7 7.29999L17.4 3ZM6.6 11V21L2.3 16.7C1.9 16.3 1.9 15.7 2.3 15.3L6.6 11Z"
+                            fill="currentColor"
+                          ></path></svg></span
+                      ><span>New York</span></a
+                    >
+                  </h3>
+                  <p>Round-trip | 3 Days</p>
+                  <h6>From <span>US$492</span></h6></span
+                >
+              </div>
+            </div>
+            <div class="col-12 col-sm-3">
+              <div class="pakageWrapperBox">
+                <div class="hotel">
+                  <img
+                    alt=""
+                    loading="lazy"
+                    width="50"
+                    height="50"
+                    decoding="async"
+                    data-nimg="1"
+                    class="card-LazyImage"
+                    style="color: transparent; width: 100%; height: auto"
+                    sizes="100vw"
+                    
+                    src="./assets/des2.webp"
+                  />
+                </div>
+                <span class="hotelbg"
+                  ><h3>
+                    <a href="https://www.libroboleto.com/#"
+                      ><span>Los Angeles</span
+                      ><span
+                        ><svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17.4 7H4C3.4 7 3 7.4 3 8C3 8.6 3.4 9 4 9H17.4V7ZM6.60001 15H20C20.6 15 21 15.4 21 16C21 16.6 20.6 17 20 17H6.60001V15Z"
+                            fill="currentColor"
+                          ></path>
+                          <path
+                            opacity="0.3"
+                            d="M17.4 3V13L21.7 8.70001C22.1 8.30001 22.1 7.69999 21.7 7.29999L17.4 3ZM6.6 11V21L2.3 16.7C1.9 16.3 1.9 15.7 2.3 15.3L6.6 11Z"
+                            fill="currentColor"
+                          ></path></svg></span
+                      ><span>New York</span></a
+                    >
+                  </h3>
+                  <p>Round-trip | 3 Days</p>
+                  <h6>From <span>US$492</span></h6></span
+                >
+              </div>
+            </div>
+            <div class="col-12 col-sm-3">
+              <div class="pakageWrapperBox">
+                <div class="hotel">
+                  <img
+                    alt=""
+                    loading="lazy"
+                    width="50"
+                    height="50"
+                    decoding="async"
+                    data-nimg="1"
+                    class="card-LazyImage"
+                    style="color: transparent; width: 100%; height: auto"
+                    sizes="100vw"
+                    
+                    src="./assets/des3.webp"
+                  />
+                </div>
+                <span class="hotelbg"
+                  ><h3>
+                    <a href="https://www.libroboleto.com/#"
+                      ><span>Los Angeles</span
+                      ><span
+                        ><svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17.4 7H4C3.4 7 3 7.4 3 8C3 8.6 3.4 9 4 9H17.4V7ZM6.60001 15H20C20.6 15 21 15.4 21 16C21 16.6 20.6 17 20 17H6.60001V15Z"
+                            fill="currentColor"
+                          ></path>
+                          <path
+                            opacity="0.3"
+                            d="M17.4 3V13L21.7 8.70001C22.1 8.30001 22.1 7.69999 21.7 7.29999L17.4 3ZM6.6 11V21L2.3 16.7C1.9 16.3 1.9 15.7 2.3 15.3L6.6 11Z"
+                            fill="currentColor"
+                          ></path></svg></span
+                      ><span>New York</span></a
+                    >
+                  </h3>
+                  <p>Round-trip | 3 Days</p>
+                  <h6>From <span>US$492</span></h6></span
+                >
+              </div>
+            </div>
+            <div class="col-12 col-sm-3">
+              <div class="pakageWrapperBox">
+                <div class="hotel">
+                  <img
+                    alt=""
+                    loading="lazy"
+                    width="50"
+                    height="50"
+                    decoding="async"
+                    data-nimg="1"
+                    class="card-LazyImage"
+                    style="color: transparent; width: 100%; height: auto"
+                    sizes="100vw"
+                  
+                    src="./assets/des4.webp"
+                  />
+                </div>
+                <span class="hotelbg"
+                  ><h3>
+                    <a href="https://www.libroboleto.com/#"
+                      ><span>Los Angeles</span
+                      ><span
+                        ><svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17.4 7H4C3.4 7 3 7.4 3 8C3 8.6 3.4 9 4 9H17.4V7ZM6.60001 15H20C20.6 15 21 15.4 21 16C21 16.6 20.6 17 20 17H6.60001V15Z"
+                            fill="currentColor"
+                          ></path>
+                          <path
+                            opacity="0.3"
+                            d="M17.4 3V13L21.7 8.70001C22.1 8.30001 22.1 7.69999 21.7 7.29999L17.4 3ZM6.6 11V21L2.3 16.7C1.9 16.3 1.9 15.7 2.3 15.3L6.6 11Z"
+                            fill="currentColor"
+                          ></path></svg></span
+                      ><span>New York</span></a
+                    >
+                  </h3>
+                  <p>Round-trip | 3 Days</p>
+                  <h6>From <span>US$492</span></h6></span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-xl aboutSec">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="hotel">
+              <img
+                alt=""
+                loading="lazy"
+                width="50"
+                height="50"
+                decoding="async"
+                data-nimg="1"
+                class="card-LazyImage"
+                style="color: transparent; width: 100%; height: auto"
+                sizes="100vw"
+             
+                src="./assets/about.webp"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h2>About Us - <span>libroboleto.com</span></h2>
+            <section>
+              <p>
+                Welcome to libroboleto.com — your ultimate guide to discovering
+                the world through the pages of a book. At libroboleto, we
+                believe that every journey starts with a story, and every
+                destination has a tale waiting to be told. Our mission is to
+                inspire, inform, and connect travelers and book lovers by
+                offering a curated collection of travel literature, guides, and
+                experiences that make every trip a memorable adventure.
+              </p>
+              <p><strong>Who We Are</strong></p>
+              <p>
+                We are a passionate team of travelers, writers, and book
+                enthusiasts who have come together with a common goal: to bring
+                the magic of travel to your fingertips. Founded on the belief
+                that literature and travel are intrinsically linked, libroboleto
+                serves as a platform where these two worlds meet. Whether you're
+                an avid explorer, an armchair traveler, or someone planning
+                their next big adventure, we have something for you. Our team
+                brings a wealth of knowledge from years of globetrotting and
+                literary exploration, making us uniquely equipped to guide you
+                on your journey, both literally and figuratively.
+              </p>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div class="newslatter">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="Newsltrwrapper">
+                <h2>
+                  Join our Newsletter To Keep Up To<br />
+                  Date With Us!
+                </h2>
+                <div class="NewForm">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Enter Your Email"
+                    name="email"
+                  /><input class="SbmtBtn" type="submit" value="Submit" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid footer-bg">
+        <div class="container-lg">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-4">
+              <h6>About us</h6>
+              <p>
+                Welcome to libroboleto.com — your ultimate guide to discovering
+                the world through the pages of a book. At libroboleto, we
+                believe that every journey starts with a story, and every
+                destination has a tale waiting to be told.
+              </p>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-2 col-xl-2">
+              <h6>Quick Links</h6>
+              <ul>
+                <li>
+                  <a href="https://www.libroboleto.com/about-us">
+                    <i class="fa-regular fa-square-check"></i>
+                    <!-- -->About Us</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.libroboleto.com/terms-conditions">
+                    <i class="fa-regular fa-square-check"></i>
+                    <!-- -->Terms & Conditions</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.libroboleto.com/privacy-policy">
+                    <i class="fa-regular fa-square-check"></i>
+                    <!-- -->Privacy Policy</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.libroboleto.com/contact-us">
+                    <i class="fa-regular fa-square-check"></i>
+                    <!-- -->Contact Us</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.libroboleto.com/refund-policy">
+                    <i class="fa-regular fa-square-check"></i>
+                    <!-- -->Refund Policy</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.libroboleto.com/site-map">
+                    <i class="fa-regular fa-square-check"></i>
+                    <!-- -->Site Map</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 col-xl-3">
+              <h6>Contact Info</h6>
+              <ul>
+                <li>
+                  <a href="https://www.libroboleto.com/#"
+                    ><i class="fa-solid fa-location-dot"></i>3 PINE TREE DR
+                    WESTAMPTON, NJ</a
+                  >
+                </li>
+                <li>
+                  <a href="mailto:info@libroboleto.com">
+                    <i class="fa-regular fa-envelope"></i>
+                    info@libroboleto.com</a
+                  >
+                </li>
+                <li>
+                  <a href="tel:+1(844) 565-0226"
+                    ><i class="fa-solid fa-phone-volume"></i>
+                    <!-- -->+1(844) 565-0226</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-3">
+              <h6>Payment Method</h6>
+              <div class="payment_icon">
+                <ul>
+                  <li>
+                    <img
+                      alt=""
+                      imagesizes="32"
+                      loading="lazy"
+                      width="50"
+                      height="30"
+                      decoding="async"
+                      data-nimg="1"
+                      class="img-fluid"
+                      style="color: transparent"
+                     
+                      src="./assets/icons-p10.png"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      alt=""
+                      imagesizes="32"
+                      loading="lazy"
+                      width="50"
+                      height="30"
+                      decoding="async"
+                      data-nimg="1"
+                      class="img-fluid"
+                      style="color: transparent"
+                    
+                      src="./assets/icons-p7.png"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      alt=""
+                      imagesizes="32"
+                      loading="lazy"
+                      width="50"
+                      height="30"
+                      decoding="async"
+                      data-nimg="1"
+                      class="img-fluid"
+                      style="color: transparent"
+                      
+                      src="./assets/icons-p11.png"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      alt=""
+                      imagesizes="32"
+                      loading="lazy"
+                      width="50"
+                      height="30"
+                      decoding="async"
+                      data-nimg="1"
+                      class="img-fluid"
+                      style="color: transparent"
+                     
+                      src="./assets/icons-p12.png"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      alt=""
+                      imagesizes="32"
+                      loading="lazy"
+                      width="50"
+                      height="30"
+                      decoding="async"
+                      data-nimg="1"
+                      class="img-fluid"
+                      style="color: transparent"
+                    
+                      src="./assets/icons-p9.png"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      alt=""
+                      imagesizes="32"
+                      loading="lazy"
+                      width="50"
+                      height="30"
+                      decoding="async"
+                      data-nimg="1"
+                      class="img-fluid"
+                      style="color: transparent"
+                     
+                      src="./assets/icons-p8.png"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-sm-12 col-lg-12 col-xl-12 top-margin">
+              <p>
+                <strong>Disclaimer : </strong>The data provided on
+                libroboleto.com is intended for general informational purposes
+                only. While we strive to ensure the accuracy and currency of the
+                information presented on the site, we make no guarantee or
+                representation, whether implied or expressed, regarding the
+                accuracy, completeness, or reliability of the information
+                displayed.<br />To provide you with the best prices on airline
+                tickets and hotel reservations, libroboleto.com utilizes search
+                partners to scan multiple travel websites. We collaborate with
+                third-party travel vendors and travel consolidators. Please note
+                that we have no direct or indirect affiliations with any
+                airlines. All prices shown on our website include applicable
+                taxes and fees.<br />The flight search engine used on our site
+                is solely a tool provided by a third party for informational
+                purposes. libroboleto.com is not affiliated with any of the
+                businesses featured on this search engine.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid footer-bottom">
+        <div class="container-lg footer-border">
+          <div class="row">
+            <div class="col-12 col-lg-8">
+              <p>Copyright © 2024 libroboleto.com. All Rights Reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fixed-bottom call-bg d-block d-md-block d-lg-none">
+        <a href="tel:+1(844) 565-0226"
+          ><p>Speical Discounted Deals On Phone Call Only</p>
+          <h4>
+            <img
+              alt=""
+              imagesizes="32"
+              loading="lazy"
+              width="50"
+              height="30"
+              decoding="async"
+              data-nimg="1"
+              class="img-fluid"
+              style="color: transparent"
+            
+              src="./assets/call.webp"
+            />
+            <!-- -->+1(844) 565-0226
+          </h4></a
+        >
+      </div>
+      <div class="modal fade show" style="display: none">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content sear-popup">
+            <div class="modal-body py-0">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-12 search-top">
+                    <div class="row text-center">
+                      <div class="col-5 col-sm-5 col-lg-5 col-xl-5">
+                        <h6></h6>
+                        <h2></h2>
+                      </div>
+                      <div class="col-2 col-sm-2 col-lg-2 col-xl-2">
+                        <div class="search-aero">
+                          <i
+                            class="fa fa-long-arrow-left"
+                            aria-hidden="true"
+                          ></i>
+                        </div>
+                        <div class="search-aero">
+                          <i
+                            class="fa fa-long-arrow-right"
+                            aria-hidden="true"
+                          ></i>
+                        </div>
+                      </div>
+                      <div class="col-5 col-sm-5 col-lg-5 col-xl-5">
+                        <h6></h6>
+                        <h2></h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 search-med text-center">
+                    <div class="discountoffer">
+                      <h6>Limited time Offer</h6>
+                      <h5>Call Now For Exclusive Fares Deals</h5>
+                      <br /><img
+                        alt="Loader"
+                        loading="lazy"
+                        width="80"
+                        height="80"
+                        decoding="async"
+                        data-nimg="1"
+                        class="img-fluid"
+                        style="color: transparent"
+                      
+                        src="./assets/loader.gif"
+                      />
+                      <p>+1(844) 565-0226</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+
+  </body>
+</html>
